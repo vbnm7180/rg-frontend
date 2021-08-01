@@ -1,25 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HeaderModule } from './modules/header/header.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { SilderComponent } from './silder/silder.component';
-import { ConsolesComponent } from './consoles/consoles.component';
+import { HeaderComponent } from './view/components/header/header.component';
+//import { SilderComponent } from './silder/silder.component';
+//import { ConsolesComponent } from './consoles/consoles.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SilderComponent,
-    ConsolesComponent
+    //SilderComponent,
+    //ConsolesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
