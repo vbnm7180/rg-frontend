@@ -5,7 +5,6 @@ import { HeaderModule } from './modules/header/header.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HeaderComponent } from './view/components/header/header.component';
 //import { SilderComponent } from './silder/silder.component';
 //import { ConsolesComponent } from './consoles/consoles.component';
@@ -20,7 +19,6 @@ import { HeaderComponent } from './view/components/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlickCarouselModule,
     HeaderModule
   ],
   providers: [],

@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [],
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 	RouterModule,
 	BrowserModule,
 	FormsModule,
-	HttpClientModule
+	HttpClientModule,
+	BrowserAnimationsModule
   ],
   exports:[
 	CommonModule,
