@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-silder',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./silder.component.scss']
+  selector: 'app-main-page',
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.scss']
 })
-export class SilderComponent implements OnInit {
+export class MainPageComponent implements OnInit {
 
   slides = [
     {img: "../../assets/images/slide1.png"},
