@@ -12,6 +12,7 @@
         display: flex;
         flex-direction: row;
         justify-content: start;
+        align-items: center;
         font-family: Oswald;
         font-size: 18px;
         color: #323232;
@@ -28,47 +29,6 @@
         margin-right: 184px;
     }
     
-    //  ::ng-deep p-menubar {
-    //     display: flex;
-    //     flex-direction: row;
-    //     align-items: center;
-    //     justify-content: flex-start;
-    //     width: 539px;
-    // }
-    //  ::ng-deep .p-menubar-root-list {
-    //     display: flex;
-    //     flex-direction: row;
-    //     align-items: center;
-    //     justify-content: space-evenly;
-    //     width: 355px;
-    //     & .p-menuitem {
-    //         margin: 20px;
-    //         &:visited {
-    //             color: #323232;
-    //         }
-    //         &:hover {
-    //             color: #FFD550;
-    //         }
-    //         &:active {
-    //             color: #EFCF6B;
-    //         }
-    //     }
-    // }
-    //  ::ng-deep .p-menubar-root-list>.p-menuitem-active>p-menubarsub>.p-submenu-list {
-    //     top: 50px;
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: start;
-    //     width: 130px;
-    //     & .p-menuitem {
-    //         background: #FFFFFF;
-    //         padding: 10px;
-    //         border: 1px solid black;
-    //     }
-    // }
-    //  ::ng-deep .p-menubar .p-menuitem-link {
-    //     overflow: visible !important;
-    // }
     .left-menu__item {
         &:visited {
             color: #323232;
@@ -100,7 +60,6 @@
         align-items: center;
         justify-content: start;
         width: 270px;
-        margin-top: 13px;
     }
     
     .phone-link {
