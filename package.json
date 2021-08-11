@@ -12,6 +12,7 @@
     "private": true,
     "dependencies": {
         "@angular/animations": "~11.0.1",
+        "@angular/cdk": "^12.2.0",
         "@angular/common": "~11.0.1",
         "@angular/compiler": "~11.0.1",
         "@angular/core": "~11.0.1",
@@ -21,6 +22,7 @@
         "@angular/router": "~11.0.1",
         "jquery": "^3.6.0",
         "ngx-slick-carousel": "^0.5.1",
+        "primeflex": "^3.0.1",
         "primeng": "^11.4.4",
         "rxjs": "~6.6.0",
         "slick-carousel": "^1.8.1",

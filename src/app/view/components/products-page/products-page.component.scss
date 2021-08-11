@@ -1,0 +1,9 @@
+:host ::ng-deep {
+    .product-card {
+        width: 100px;
+        height: 100px;
+    }
+    .card__image {}
+    .card__description {}
+    .card__price {}
+}

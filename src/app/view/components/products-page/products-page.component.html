@@ -1,0 +1,11 @@
+<p-dataView #dv [value]="products" [paginator]="true" [rows]="2" layout="grid">
+    <ng-template let-product pTemplate="gridItem">
+        <div class="p-col-12">
+            <div class="product-card">
+                <img src="" alt="" class="card__image">
+                <div class="card__description">{{product.descrtiption}}</div>
+                <div class="card__price">{{product.price}}</div>
+            </div>
+        </div>
+    </ng-template>
+</p-dataView>
