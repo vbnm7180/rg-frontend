@@ -1,7 +1,16 @@
+.products-page {
+    padding: 0;
+    width: 1440px;
+    margin: 0 auto;
+}
+
 :host ::ng-deep {
     .product-card {
-        width: 100px;
-        height: 100px;
+        width: 234px;
+        height: 328px;
+        border-radius: 8px;
+        box-shadow: -3px 4px 19px 0 rgba(0, 0, 0, 0.1);
+        background-color: #fff;
     }
     .card__image {}
     .card__description {}
