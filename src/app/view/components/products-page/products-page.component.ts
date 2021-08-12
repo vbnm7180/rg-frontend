@@ -75,6 +75,300 @@ export class ProductsPageComponent implements OnInit {
 					value: 'Неполный'
 				}]
 
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
+	        },
+			{
+				id: '1',
+				name: 'Sega Mega Drive 3',
+				price: '4000',
+				imagePath: '/test3',
+				categoryID: '1',
+				description: 'test desc',
+				attributes: [{
+					name: 'Регион',
+					value: 'PAL'
+				},
+				{
+					name: 'Состояние',
+					value: '3'
+				},
+				{
+					name: 'Комплект',
+					value: 'Неполный'
+				}]
+
 	        }
 		];
 	}
