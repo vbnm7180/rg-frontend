@@ -17,8 +17,8 @@ export class ProductsPageComponent implements OnInit {
 		this.products = [
 			{
 				id: '1',
-				name: 'Sega Mega Drive 1',
-				price: '2000 рублей',
+				name: 'Sega Mega Drive (PAL) Серая в коробке',
+				price: '200 000',
 				imagePath: '/test1',
 				categoryID: '1',
 				description: 'test desc',
@@ -38,7 +38,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '2',
 				name: 'Sega Mega Drive 2',
-				price: '3000 рублей',
+				price: '3000',
 				imagePath: '/test2',
 				categoryID: '1',
 				description: 'test desc',
@@ -58,7 +58,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000 рублей',
+				price: '4000',
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',

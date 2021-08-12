@@ -5,14 +5,92 @@
 }
 
 :host ::ng-deep {
+    .cards__container {}
     .product-card {
-        width: 234px;
-        height: 328px;
+        width: 254px;
+        height: 348px;
         border-radius: 8px;
         box-shadow: -3px 4px 19px 0 rgba(0, 0, 0, 0.1);
         background-color: #fff;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        border: 3px solid #fff;
+        &:hover {
+            cursor: pointer;
+            border: 3px solid #FFD44F;
+        }
     }
-    .card__image {}
-    .card__description {}
-    .card__price {}
+    .card__image {
+        width: 190px;
+        height: 160px;
+        border-radius: 10px;
+    }
+    .card__name {
+        font-family: Oswald;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 27px;
+        color: #323232;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .card__description {
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #5E6572;
+    }
+    .card-bottom {
+        width: 100%;
+        margin-top: auto;
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .card__price {
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+        color: #323232;
+    }
+    .card__button-add {
+        width: 113px;
+        height: 37px;
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        color: #364052;
+        background: #FFD44F;
+        border-radius: 4px;
+        &:hover {
+            background: #FFE38B;
+        }
+        &:active {
+            background: #EFCF6B;
+        }
+    }
+    .card__button-done {
+        width: 113px;
+        height: 37px;
+        font-family: Nunito;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        color: #364052;
+        background: #FFFFFF;
+        border: 2px solid #FFD44F;
+        border-radius: 4px;
+    }
 }

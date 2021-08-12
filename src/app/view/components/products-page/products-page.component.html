@@ -5,15 +5,13 @@
         </ng-template>
         <ng-template let-product pTemplate="gridItem">
             <div class="cards__container">
-                <div class="cards__container">
-                    <div class="product-card">
-                        <img src="" alt="" class="card__image">
-                        <div class="card__name">{{product.name}}</div>
-                        <div class="card__description">{{product.descrtiption}}</div>
-                        <div class="card-bottom">
-                            <div class="card__price">{{product.price}}</div>
-                            <button class="card__button"></button>
-                        </div>
+                <div class="product-card">
+                    <img src="../../../../assets/images/product1.jpg" alt="" class="card__image">
+                    <div class="card__name">{{product.name}}</div>
+                    <div class="card-bottom">
+                        <div class="card__price">{{product.price}} ₽</div>
+                        <button class="card__button-add">В корзину</button>
+                        <button class="card__button-done" *ngIf="false">В корзине</button>
                     </div>
                 </div>
             </div>
