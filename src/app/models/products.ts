@@ -1,7 +1,7 @@
 export class Product {
 	public id: string;
 	public name: string;
-	public price: string;
+	public price: number;
 	public imagePath: string;
 	public categoryID: string;
 	public description: string;
@@ -10,7 +10,7 @@ export class Product {
 	constructor (data){
 		this.id = data.id || '';
 		this.name = data.name || '';
-		this.price = data.price || '';
+		this.price = data.price || 0;
 		this.imagePath = data.price || '';
 		this.categoryID = data.categoryID || '';
 		this.description = data.description || '';

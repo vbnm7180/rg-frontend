@@ -9,7 +9,11 @@ import { Product } from 'src/app/models/products';
 })
 export class ProductsPageComponent implements OnInit {
 
+	public sortKey: string;
+    public sortField: string;
+    public sortOrder: number;
 	public products: Product[] = [];
+	public sortOptions = [];
 
 	constructor() { }
 
@@ -18,7 +22,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive (PAL) Серая в коробке',
-				price: '200 000',
+				price: 200000,
 				imagePath: '/test1',
 				categoryID: '1',
 				description: 'test desc',
@@ -38,7 +42,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '2',
 				name: 'Sega Mega Drive 2',
-				price: '3000',
+				price: 3000,
 				imagePath: '/test2',
 				categoryID: '1',
 				description: 'test desc',
@@ -58,7 +62,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 4000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -79,7 +83,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 4000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -100,7 +104,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 4000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -121,7 +125,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 4000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -142,7 +146,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 5000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -163,7 +167,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 6000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -184,7 +188,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 20000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -205,7 +209,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 10000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -226,7 +230,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 11100,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -247,7 +251,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 1200,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -268,7 +272,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 400,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -289,7 +293,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 380,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -310,7 +314,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 1000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -331,7 +335,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 3000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -352,7 +356,7 @@ export class ProductsPageComponent implements OnInit {
 			{
 				id: '1',
 				name: 'Sega Mega Drive 3',
-				price: '4000',
+				price: 7000,
 				imagePath: '/test3',
 				categoryID: '1',
 				description: 'test desc',
@@ -371,7 +375,32 @@ export class ProductsPageComponent implements OnInit {
 
 	        }
 		];
+
+		this.sortOptions = [
+            {label: 'Цена по возрастанию', value: 'lowest price'},
+            {label: 'Цена по убыванию', value: 'highest price'},
+			{label: 'По алфавиту', value: 'alphabet'}
+        ];
 	}
+
+	onSortChange(event) {
+		
+		switch (event.value) {
+			case 'lowest price': 
+				this.sortOrder = 1;
+				this.sortField = 'price';
+				break;
+			case 'highest price':
+				this.sortOrder = -1;
+				this.sortField = 'price';
+				break;
+			case 'alphabet':
+				this.sortOrder = 1;
+				this.sortField = 'name';
+				break;
+		}
+		console.log(this.sortOrder, this.sortField)
+    }
 
 
 }
