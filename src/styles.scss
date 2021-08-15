@@ -2,6 +2,7 @@
 
 @import "../node_modules/primeng/resources/primeng.min.css";
 @import "../node_modules/primeng/resources/themes/retrogame/theme.css";
+@import "../node_modules/primeicons/primeicons.css";
 //Точки для слайдера
 .dot-item {
     display: flex;
@@ -54,6 +55,14 @@
     src: local('Nunito SemiBold'), local('Nunito-SemiBold'), url('./assets/fonts/NunitoSemibold/Nunitosemibold.woff2') format('woff2'), url('./assets/fonts/NunitoSemibold/Nunitosemibold.woff') format('woff'), url('./assets/fonts/NunitoSemibold/Nunitosemibold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
+}
+
+//input type search крестик
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
 }
 
 

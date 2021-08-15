@@ -4,6 +4,22 @@
     margin: 0 auto;
 }
 
+.products__filter {
+    background: #ffffff;
+    border: 1px solid #323232;
+    border-radius: 8px;
+    margin-left: 50px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    font-family: Nunito;
+    font-size: 14px;
+    line-height: 19px;
+    width: 200px;
+    padding: 6px;
+    &::placeholder {
+        color: #5E6572;
+    }
+}
+
 :host ::ng-deep {
     .filter__menu {
         width: 100px;
