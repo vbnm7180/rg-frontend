@@ -3,7 +3,7 @@ import { Product } from 'src/app/models/products';
 
 
 @Component({
-	selector: 'app-products-page',
+	selector: 'rg-products-page',
 	templateUrl: './products-page.component.html',
 	styleUrls: ['./products-page.component.scss']
 })

@@ -4,6 +4,7 @@ import { HeaderModule } from './modules/header/header.module';
 import { FooterModule } from './modules/footer/footer.module';
 import { MainPageModule} from './modules/main-page/main-page.module';
 import { ProductsPageModule } from './modules/products-page/products-page.module';
+import { ProductsDetailPageModule }  from './modules/products-detail-page/products-detail-page.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component';
     HeaderModule,
     FooterModule,
     MainPageModule,
-    ProductsPageModule
+    ProductsPageModule,
+    ProductsDetailPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
