@@ -1,0 +1,116 @@
+.cart-products-page {}
+
+.cart__container {
+    width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart__header {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #323232;
+}
+
+.cart__body {}
+
+.product__list {}
+
+.list__header {
+    width: 638px;
+    padding-bottom: 9px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 2px solid #FFD44F;
+    font-family: Oswald;
+    font-size: 14px;
+    line-height: 21px;
+    color: #5E6572;
+}
+
+.header__name {
+    margin-right: 434px;
+}
+
+.header__price {}
+
+.list__item {
+    display: flex;
+}
+
+.item__number {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #5E6572;
+}
+
+.item__name {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #323232;
+}
+
+.item__price {
+    font-family: Oswald;
+    font-size: 14px;
+    font-weight: bold;
+    color: #323232;
+}
+
+.del-from-cart__btn {
+    color: #323232;
+    background: transparent;
+    width: 12px;
+    height: 12px;
+}
+
+.pi {}
+
+.pi-times {}
+
+.order-price__wrapper {}
+
+.order-price__header {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    color: #323232;
+}
+
+.order-price__body {}
+
+.product-quantity {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #5E6572;
+}
+
+.order-price__number {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #323232;
+}
+
+.next__btn {
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 600;
+    color: #323232;
+    width: 210px;
+    height: 37px;
+    padding: 9px 23px 9px 20px;
+    border-radius: 4px;
+    background-color: #ffd44f;
+}
