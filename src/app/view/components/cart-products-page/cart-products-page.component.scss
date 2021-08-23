@@ -1,13 +1,18 @@
-.cart-products-page {}
+.cart-products-page {
+    min-height: 80%;
+}
 
 .cart__container {
+    min-height: 100%;
     width: 1140px;
+    padding: 93px 0;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
 .cart__header {
+    margin-bottom: 39px;
     font-family: Oswald;
     font-weight: 600;
     font-size: 24px;
@@ -15,33 +20,48 @@
     color: #323232;
 }
 
-.cart__body {}
+.cart__body {
+    display: flex;
+    justify-content: space-between;
+}
 
 .product__list {}
 
 .list__header {
-    width: 638px;
+    width: 690px;
     padding-bottom: 9px;
     display: flex;
     justify-content: flex-start;
     border-bottom: 2px solid #FFD44F;
     font-family: Oswald;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
     color: #5E6572;
 }
 
 .header__name {
-    margin-right: 434px;
+    margin-right: 445px;
 }
 
 .header__price {}
 
 .list__item {
+    width: 690px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.item__image {
+    margin-right: 55px;
+    height: 80px;
+    width: 100px;
+    border-radius: 3px;
 }
 
 .item__number {
+    margin-right: 14px;
     font-family: Oswald;
     font-weight: 600;
     font-size: 18px;
@@ -50,16 +70,18 @@
 }
 
 .item__name {
+    min-width: 395px;
     font-family: Oswald;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 21px;
     color: #323232;
 }
 
 .item__price {
+    margin-right: auto;
     font-family: Oswald;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     color: #323232;
 }
@@ -67,30 +89,44 @@
 .del-from-cart__btn {
     color: #323232;
     background: transparent;
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
 }
 
 .pi {}
 
 .pi-times {}
 
-.order-price__wrapper {}
+.order-price__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 40px;
+    width: 301px;
+    height: 215px;
+    border-radius: 8px;
+    border: solid 1px #5e6572;
+}
 
 .order-price__header {
     font-family: Oswald;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 27px;
     color: #323232;
 }
 
-.order-price__body {}
+.order-price__body {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #FFD44F;
+}
 
 .product-quantity {
     font-family: Oswald;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 21px;
     color: #5E6572;
 }
@@ -98,7 +134,7 @@
 .order-price__number {
     font-family: Oswald;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 21px;
     color: #323232;
 }
@@ -109,8 +145,14 @@
     font-weight: 600;
     color: #323232;
     width: 210px;
-    height: 37px;
+    height: 40px;
     padding: 9px 23px 9px 20px;
     border-radius: 4px;
     background-color: #ffd44f;
+    &:hover {
+        background: #FFE38B;
+    }
+    &:active {
+        background: #EFCF6B;
+    }
 }
