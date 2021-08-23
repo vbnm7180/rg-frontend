@@ -6,9 +6,11 @@ import { MainPageModule} from './modules/main-page/main-page.module';
 import { ProductsPageModule } from './modules/products-page/products-page.module';
 import { ProductsDetailPageModule }  from './modules/products-detail-page/products-detail-page.module';
 import { CartProductsPageModule } from './modules/cart-products-page/cart-products-page.module';
+import { CartFormPageModule } from './modules/cart-form-page/cart-form-page.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 
 
 
@@ -25,7 +27,8 @@ import { AppComponent } from './app.component';
     MainPageModule,
     ProductsPageModule,
     ProductsDetailPageModule,
-    CartProductsPageModule
+    CartProductsPageModule,
+    CartFormPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
