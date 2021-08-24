@@ -1,0 +1,93 @@
+.cart-form-page {
+    min-height: 80%;
+}
+
+.cart__container {
+    width: 1040px;
+    padding: 93px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart__body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart__header {
+    font-family: Oswald;
+    font-size: 24px;
+    font-weight: 600;
+    color: #323232;
+    margin-bottom: 50px;
+}
+
+.cart__form {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.p-float-label {}
+
+.order-price__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 40px;
+    width: 301px;
+    height: 215px;
+    border-radius: 8px;
+    border: solid 1px #5e6572;
+}
+
+.order-price__header {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    color: #323232;
+}
+
+.order-price__body {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #FFD44F;
+}
+
+.product-quantity {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    color: #5E6572;
+}
+
+.order-price__number {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 21px;
+    color: #323232;
+}
+
+.make-order__btn {
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 600;
+    color: #323232;
+    width: 210px;
+    height: 40px;
+    padding: 9px 23px 9px 20px;
+    border-radius: 4px;
+    background-color: #ffd44f;
+    &:hover {
+        background: #FFE38B;
+    }
+    &:active {
+        background: #EFCF6B;
+    }
+}
