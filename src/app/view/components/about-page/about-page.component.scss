@@ -1,0 +1,78 @@
+.about-page {}
+
+.about-page__container {
+    width: 1440px;
+    padding: 93px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.about__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 130px;
+}
+
+.header__left-block {
+    width: 538px;
+    height: 3px;
+    background-color: #fdb433;
+}
+
+.header__text {
+    font-family: Oswald;
+    font-size: 36px;
+    font-weight: 600;
+    color: #323232;
+}
+
+.header__right-block {
+    width: 538px;
+    height: 3px;
+    background-color: #fdb433;
+}
+
+.about__body {
+    display: flex;
+    align-items: center;
+}
+
+.body__left-block {
+    width: 740px;
+    height: 511px;
+    padding: 90px 41px 89px 150px;
+    border-radius: 10px;
+    background-color: #ffd44f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-block__top {
+    font-family: Nunito;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.left-block__center {
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.left-block__bottom {
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.body__right-block {
+    width: 700px;
+    height: 414px;
+}
