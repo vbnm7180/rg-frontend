@@ -1,0 +1,54 @@
+<div class="account-page">
+    <div class="account-page__container">
+        <p-tabView>
+            <p-tabPanel header="Личный кабинет">
+                <div class="form-wrapper">
+                    <form class="account__form">
+                        <span class="p-float-label">
+						<input id="float-input" type="text" pInputText> 
+						<label for="float-input">ФИО</label>
+					</span>
+                        <span class="p-float-label">
+						<input id="float-input" type="text" pInputText> 
+						<label for="float-input">Телефон</label>
+					</span>
+                        <span class="p-float-label">
+						<input id="float-input" type="text" pInputText> 
+						<label for="float-input">Email</label>
+					</span>
+                        <span class="p-float-label">
+						<input id="float-input" type="text" pInputText> 
+						<label for="float-input">Город</label>
+					</span>
+                        <span class="p-float-label">
+						<input id="float-input" type="text" pInputText> 
+						<label for="float-input">Улица/Дом/Квартира</label>
+					</span>
+                        <span class="p-float-label">
+						<input id="float-input" type="text" pInputText> 
+						<label for="float-input">Индекс</label>
+					</span>
+                    </form>
+                    <button class="save-btn">Сохранить</button>
+                </div>
+
+            </p-tabPanel>
+            <p-tabPanel header="Мои заказы">
+                <div class="order-wrapper" *ngFor="let order of orders">
+                    <div class="order__header">
+                        <div class="order__number"># {{order.id}}</div>
+                        <div class="order__date">{{order.date}}</div>
+                    </div>
+                    <div class="order__item" *ngFor="let product of order.products; let i=index">
+                        <div class="item__name">{{i+1}}. {{product.name}} </div>
+                        <div class="item__price">{{product.price}} ₽</div>
+                    </div>
+                    <div class="order__footer">
+                        <div class="total-name">Общая стоимость:</div>
+                        <div class="total-price">{{order.price}}</div>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>

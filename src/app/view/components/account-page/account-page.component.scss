@@ -1,0 +1,99 @@
+.account-page {
+    min-height: 80%;
+}
+
+.account-page__container {
+    width: 1040px;
+    padding: 93px 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.account__form {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-btn {
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: 600;
+    color: #323232;
+    width: 150px;
+    height: 41px;
+    padding: 9px 23px 9px 20px;
+    border-radius: 4px;
+    background-color: #ffd44f;
+    &:hover {
+        background: #FFE38B;
+    }
+    &:active {
+        background: #EFCF6B;
+    }
+    margin-top: 20px;
+}
+
+.order-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 365px;
+    align-self: center;
+}
+
+.order__header {
+    display: flex;
+    justify-content: space-between;
+    width: 410px;
+    height: 40px;
+    padding: 10px 22px 10px 22px;
+    border-radius: 4px;
+    background-color: #ffd44f;
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: bold;
+    color: #323232;
+}
+
+.order__number {}
+
+.order__date {}
+
+.order__item {
+    display: flex;
+    justify-content: space-between;
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: bold;
+    color: #323232;
+}
+
+.item__name {}
+
+.item__price {}
+
+.order__footer {
+    border-top: 2px solid #ffd44f;
+    display: flex;
+    justify-content: space-between;
+    font-family: Nunito;
+    font-size: 14px;
+    font-weight: bold;
+    color: #323232;
+}
+
+.total-name {}
+
+.total-price {}
