@@ -26,7 +26,7 @@ export class AccountPageComponent implements OnInit {
       price: 2000,
       products: [	{
 				id: '1',
-				name: 'Sega Mega Drive (PAL) Серая в коробке',
+				name: 'Sega Mega Drive (PAL) Серая в коробкеddddddd dddddddddddddddd dddddddddd',
 				price: 200000,
 				imagePath: '/test1',
 				categoryID: '1',
@@ -67,7 +67,8 @@ export class AccountPageComponent implements OnInit {
       status: 'В обработке'
 
 
-    }];
+    }
+];
   }
 
 }
