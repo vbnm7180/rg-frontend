@@ -4,6 +4,10 @@
     margin: 0 auto;
 }
 
+::ng-deep p-dataview {
+    background-color: #323232;
+}
+
 .products__filter {
     background: #ffffff;
     border: 1px solid #323232;
