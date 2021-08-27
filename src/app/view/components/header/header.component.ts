@@ -21,23 +21,33 @@ export class HeaderComponent implements OnInit {
           label: 'Приставки',
           items: [{
                   label: 'Sega',
+                  routerLink: ['/consoles/sega']
               },
-              {label: 'Nintendo'}
+              {
+                label: 'Nintendo',
+                routerLink: ['/consoles/nintendo']
+              }
           ]
       },
       {
         label: 'Игры',
         items: [{
                 label: 'Sega',
+                routerLink: ['/games/sega']
             },
-            {label: 'Nintendo'}
+            {
+              label: 'Nintendo',
+              routerLink: ['/games/nintendo']
+            }
         ]
     },
     {
-      label: 'Доставка и оплата'
+      label: 'Доставка и оплата',
+      routerLink: ['/delivery']
     },
     {
-      label : 'О нас'
+      label : 'О нас',
+      routerLink: ['/about']
     }];
   }
 
