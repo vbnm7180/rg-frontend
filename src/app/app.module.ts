@@ -16,10 +16,7 @@ import { DeliveryPageModule } from './modules/delivery-page/delivery-page.module
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
-
-
-
+import { APIService } from './services/api-service.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +38,9 @@ import { AppComponent } from './app.component';
     AboutPageModule,
     DeliveryPageModule
   ],
-  providers: [],
+  providers: [
+    APIService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

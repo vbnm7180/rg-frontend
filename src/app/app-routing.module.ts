@@ -8,6 +8,7 @@ import { CartProductsPageComponent } from './view/components/cart-products-page/
 import { DeliveryPageComponent } from './view/components/delivery-page/delivery-page.component';
 import { LoginPageComponent } from './view/components/login-page/login-page.component';
 import { MainPageComponent } from './view/components/main-page/main-page.component';
+import { ProductsDetailPageComponent } from './view/components/products-detail-page/products-detail-page.component';
 import { ProductsPageComponent } from './view/components/products-page/products-page.component';
 import { RegistrationPageComponent } from './view/components/registration-page/registration-page.component';
 
@@ -17,12 +18,12 @@ const routes: Routes = [
     component: MainPageComponent
   },
   {
-    path: 'games/:category',
+    path: 'category/:id',
     component: ProductsPageComponent
   },
   {
-    path: 'consoles/:category',
-    component: ProductsPageComponent
+    path: 'product/:id',
+    component: ProductsDetailPageComponent
   },
   {
     path: 'delivery',

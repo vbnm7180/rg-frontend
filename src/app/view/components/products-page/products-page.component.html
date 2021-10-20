@@ -5,7 +5,7 @@
             <input class="products__filter" type="search" placeholder="Поиск по товарам" (input)="dv.filter($event.target.value)">
         </ng-template>
         <ng-template let-product pTemplate="gridItem">
-            <div class="cards__container">
+            <div class="cards__container" [routerLink]="['/product', product.id]">
                 <div class="product-card">
                     <img src="../../../../assets/images/product1.jpg" alt="" class="card__image">
                     <div class="card__name">{{product.name}}</div>

@@ -21,11 +21,11 @@ export class HeaderComponent implements OnInit {
           label: 'Приставки',
           items: [{
                   label: 'Sega',
-                  routerLink: ['/consoles/sega']
+                  routerLink: ['/category/1']
               },
               {
                 label: 'Nintendo',
-                routerLink: ['/consoles/nintendo']
+                routerLink: ['/category/3']
               }
           ]
       },
@@ -33,11 +33,11 @@ export class HeaderComponent implements OnInit {
         label: 'Игры',
         items: [{
                 label: 'Sega',
-                routerLink: ['/games/sega']
+                routerLink: ['/category/2']
             },
             {
               label: 'Nintendo',
-              routerLink: ['/games/nintendo']
+              routerLink: ['/category/4']
             }
         ]
     },
