@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/products';
-import { APIService } from 'src/app/services/api-service.service';
+import { APIService } from 'src/app/services/api-service/api-service.service';
 
 @Component({
   selector: 'rg-cart-products-page',

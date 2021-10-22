@@ -16,7 +16,8 @@ import { DeliveryPageModule } from './modules/delivery-page/delivery-page.module
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { APIService } from './services/api-service.service';
+import { APIService } from './services/api-service/api-service.service';
+import { CartService } from './services/cart-service/cart-service.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { APIService } from './services/api-service.service';
     DeliveryPageModule
   ],
   providers: [
-    APIService
+    APIService,
+    CartService
   ],
   bootstrap: [AppComponent]
 })
