@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/products';
 import { ActivatedRoute, Router } from '@angular/router';
-import { APIService } from 'src/app/services/api-service.service';
+import { APIService } from 'src/app/services/api-service/api-service.service';
+import { CartService } from 'src/app/services/cart-service/cart-service.service';
 
 @Component({
   selector: 'rg-products-detail-page',
@@ -15,14 +16,16 @@ export class ProductsDetailPageComponent implements OnInit {
   constructor(
     private router:Router,
 		private activatedRoute:ActivatedRoute,
-		private apiService:APIService
+		private apiService:APIService,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((data)=>{
-      this.apiService.test(data.id).subscribe((product:any)=>{
-        console.log(product.data[0])
-        this.product = new Product(product.data[0]);
+      console.log(data.id)
+      this.apiService.getProduct(data.id).subscribe((response:any)=>{
+        console.log(response)
+        this.product = new Product(response.data);
         console.log(this.product)
       });
 			//this.apiService.getProduct(data.id).subscribe((product:any)=>{
@@ -48,5 +51,14 @@ export class ProductsDetailPageComponent implements OnInit {
   //   ]
   //   };
    }
+
+   addToCart(product:Product) {
+		this.cartService.addProductToCart(product);
+	}
+
+   isInCart(product:Product) {
+     console.log(this.cartService.isProductInCart(product))
+		return this.cartService.isProductInCart(product);
+	}
 
 }

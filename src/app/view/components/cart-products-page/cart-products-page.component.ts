@@ -24,28 +24,28 @@ export class CartProductsPageComponent implements OnInit {
 			this.products = products;
 		});
 	});
-    this.products = [
-			{
-				id: '1',
-				name: 'Sega Mega Drive (PAL) Серая в коробке',
-				price: 200000,
-				imagePath: '/test1',
-				categoryID: '1',
-				description: 'test desc',
-				attributes: [{
-					name: 'Регион',
-					value: 'PAL'
-				},
-				{
-					name: 'Состояние',
-					value: '4'
-				},
-				{
-					name: 'Комплект',
-					value: 'Полный'
-				}]
-			}
-      ];
+    // this.products = [
+	// 		{
+	// 			id: '1',
+	// 			name: 'Sega Mega Drive (PAL) Серая в коробке',
+	// 			price: 200000,
+	// 			imagePath: '/test1',
+	// 			categoryID: '1',
+	// 			description: 'test desc',
+	// 			attributes: [{
+	// 				name: 'Регион',
+	// 				value: 'PAL'
+	// 			},
+	// 			{
+	// 				name: 'Состояние',
+	// 				value: '4'
+	// 			},
+	// 			{
+	// 				name: 'Комплект',
+	// 				value: 'Полный'
+	// 			}]
+	// 		}
+    //   ];
   }
 
 }

@@ -14,7 +14,7 @@ export class APIService {
     return this.http.get(`http://127.0.0.1:8000/api/category/${id}`);
   }
 
-  public test(id: string) {
+  public getProduct(id: string) {
     return this.http.get(`http://127.0.0.1:8000/api/product/${id}`);
   }
 }

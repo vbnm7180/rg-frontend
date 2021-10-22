@@ -115,6 +115,7 @@
         &:active {
             background: #EFCF6B;
         }
+        z-index: 2;
     }
     .card__button-done {
         width: 113px;
@@ -128,5 +129,6 @@
         background: #FFFFFF;
         border: 2px solid #FFD44F;
         border-radius: 4px;
+        z-index: 2;
     }
 }

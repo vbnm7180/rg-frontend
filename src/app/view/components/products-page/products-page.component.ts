@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/products';
 import { APIService } from 'src/app/services/api-service/api-service.service';
+import { CartService } from 'src/app/services/cart-service/cart-service.service';
 
 
 @Component({
@@ -20,14 +21,18 @@ export class ProductsPageComponent implements OnInit {
 	constructor(
 		private router:Router,
 		private activatedRoute:ActivatedRoute,
-		private apiService:APIService
+		private apiService:APIService,
+		private cartService:CartService
 	) { }
 
 	ngOnInit(): void {
+		console.log(this.cartService.getCartProducts())
+
 		this.activatedRoute.params.subscribe((data)=>{
-			this.apiService.getAllCategoryProducts(data.id).subscribe((products:any)=>{
-				console.log(products)
-				this.products=products.data;
+			this.apiService.getAllCategoryProducts(data.id).subscribe((response:any)=>{
+				console.log(this.products)
+				this.products=response.data;
+				console.log(this.products)
 			});
 		});
 
@@ -414,5 +419,19 @@ export class ProductsPageComponent implements OnInit {
 		}
 		console.log(this.sortOrder, this.sortField)
     }
+
+	addToCart(event:MouseEvent,product:Product) {
+		console.log(product)
+		event.stopPropagation();
+		this.cartService.addProductToCart(product);
+	}
+
+	isInCart(product:Product) {
+		return this.cartService.isProductInCart(product);
+	}
+
+	goToCart(event:MouseEvent) {
+		event.stopPropagation();
+	}
 
 }
