@@ -6,37 +6,37 @@
             <form class="cart__form">
                 <span class="p-float-label">
 					<input id="float-input" type="text" pInputText> 
-					<label for="float-input">ФИО</label>
+					<label for="float-input" formControlName="name">ФИО</label>
 				</span>
                 <span class="p-float-label">
 					<input id="float-input" type="text" pInputText> 
-					<label for="float-input">Номер телефона</label>
+					<label for="float-input" formControlName="phone">Номер телефона</label>
 				</span>
                 <span class="p-float-label">
 					<input id="float-input" type="text" pInputText> 
-					<label for="float-input">Электронная почта</label>
+					<label for="float-input" formControlName="email">Электронная почта</label>
 				</span>
                 <span class="p-float-label">
 					<input id="float-input" type="text" pInputText> 
-					<label for="float-input">Город</label>
+					<label for="float-input" formControlName="city">Город</label>
 				</span>
                 <span class="p-float-label">
 					<input id="float-input" type="text" pInputText> 
-					<label for="float-input">Улица/Дом/Квартира</label>
+					<label for="float-input" formControlName="address">Улица/Дом/Квартира</label>
 				</span>
                 <span class="p-float-label">
 					<input id="float-input" type="text" pInputText> 
-					<label for="float-input">Индекс</label>
+					<label for="float-input" formControlName="postcode">Индекс</label>
 				</span>
             </form>
 
             <div class="order-price__wrapper">
                 <div class="order-price__header">Итоговая стоимость</div>
                 <div class="order-price__body">
-                    <div class="product-quantity">Товары: 3 шт.</div>
-                    <div class="order-price__number">200000 ₽</div>
+                    <div class="product-quantity">Товары: {{products.length}} шт.</div>
+                    <div class="order-price__number">{{ getCartPrice() }} ₽</div>
                 </div>
-                <button class="make-order__btn">Оформить заказ</button>
+                <button class="make-order__btn" (click)="makeOrder()">Оформить заказ</button>
             </div>
 
         </div>

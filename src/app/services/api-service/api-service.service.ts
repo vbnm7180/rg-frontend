@@ -17,4 +17,10 @@ export class APIService {
   public getProduct(id: string) {
     return this.http.get(`http://127.0.0.1:8000/api/product/${id}`);
   }
+
+  public makeOrder(orderData) {
+    this.http.post(`http://127.0.0.1:8000/api/create-order`,orderData);
+    
+
+  }
 }

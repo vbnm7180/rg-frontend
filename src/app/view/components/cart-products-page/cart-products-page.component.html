@@ -14,16 +14,16 @@
                     <img src="../../../../assets/images/product1.jpg" alt="" class="item__image">
                     <div class="item__name">{{product.name}}</div>
                     <div class="item__price">{{product.price}} ₽</div>
-                    <button class="del-from-cart__btn pi pi-times"></button>
+                    <button class="del-from-cart__btn pi pi-times" (click)="deleteFromCart(product)"></button>
                 </div>
             </div>
             <div class="order-price__wrapper">
                 <div class="order-price__header">Итоговая стоимость</div>
                 <div class="order-price__body">
                     <div class="product-quantity">Товары: {{products.length}} шт.</div>
-                    <div class="order-price__number">200000 ₽</div>
+                    <div class="order-price__number">{{ getCartPrice() }} ₽</div>
                 </div>
-                <button class="next__btn">Продолжить оформление</button>
+                <button class="next__btn" [routerLink]="['/checkout']">Продолжить оформление</button>
             </div>
         </div>
 

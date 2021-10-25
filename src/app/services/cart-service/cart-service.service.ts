@@ -17,6 +17,14 @@ export class CartService {
     return this.products;
   }
 
+  getCartPrice() {
+    let cartPrice: number = 0;
+    this.products.forEach((product)=>{
+      cartPrice = cartPrice + product.price;
+    });
+    return cartPrice;
+  }
+
   addProductToCart(product:Product) {
     console.log(product)
     if (!this.isProductInCart(product)){
@@ -29,8 +37,11 @@ export class CartService {
 
   deleteProductFromCart(product:Product) {
     this.products = this.products.filter((item)=>{
-      item!==product;
+      console.log(JSON.stringify(item)) 
+      console.log(JSON.stringify(product)) 
+      return JSON.stringify(item) !== JSON.stringify(product)
     });
+    console.log(this.products)
     this.syncProducts();
   }
 
@@ -38,8 +49,8 @@ export class CartService {
     //console.log(this.products)
     //console.log(product)
     return this.products.some((item)=>{
-      console.log(JSON.stringify(item)) 
-      console.log(JSON.stringify(product)) 
+      //console.log(JSON.stringify(item)) 
+      //console.log(JSON.stringify(product)) 
       return JSON.stringify(item) === JSON.stringify(product)
     });
   }

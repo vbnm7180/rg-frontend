@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/products';
 import { APIService } from 'src/app/services/api-service/api-service.service';
+import { CartService } from 'src/app/services/cart-service/cart-service.service';
 
 @Component({
   selector: 'rg-cart-products-page',
@@ -15,15 +16,16 @@ export class CartProductsPageComponent implements OnInit {
   constructor(
 	  private router:Router,
 	  private activatedRoute:ActivatedRoute,
-	  private apiService: APIService
+	  private apiService: APIService,
+	  private cartService: CartService
   ) { }
 
   ngOnInit(): void {
-	this.activatedRoute.paramMap.subscribe((data)=>{
-		this.apiService.getAllCategoryProducts(data.get('id')).subscribe((products:any)=>{
-			this.products = products;
-		});
-	});
+	  //this.products = this.cartService.getCartProducts();
+	  this.getCartProducts();
+
+
+
     // this.products = [
 	// 		{
 	// 			id: '1',
@@ -46,6 +48,19 @@ export class CartProductsPageComponent implements OnInit {
 	// 			}]
 	// 		}
     //   ];
+  }
+
+  getCartProducts(){
+	this.products = this.cartService.getCartProducts();
+  }
+
+  getCartPrice(){
+	  return this.cartService.getCartPrice();
+  }
+
+  deleteFromCart(product){
+	  this.cartService.deleteProductFromCart(product);
+	  this.getCartProducts();
   }
 
 }
