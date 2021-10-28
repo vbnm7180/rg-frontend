@@ -18,6 +18,10 @@ import { AppComponent } from './app.component';
 
 import { APIService } from './services/api-service/api-service.service';
 import { CartService } from './services/cart-service/cart-service.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { XsrfInterceptor } from './interceptors/xsrf.interceptor';
+import { CookieModule, CookieService } from 'ngx-cookie';
 
 @NgModule({
   declarations: [
@@ -37,11 +41,16 @@ import { CartService } from './services/cart-service/cart-service.service';
     RegistrationPageModule,
     AccountPageModule,
     AboutPageModule,
-    DeliveryPageModule
+    DeliveryPageModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CookieModule.forRoot()
   ],
   providers: [
     APIService,
-    CartService
+    CartService,
+    CookieService,
+    { provide: HTTP_INTERCEPTORS, useClass: XsrfInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
