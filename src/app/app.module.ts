@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { XsrfInterceptor } from './interceptors/xsrf.interceptor';
 import { CookieModule, CookieService } from 'ngx-cookie';
+//import { PasswordConformationValidatorDirective } from './password-conformation-validator.directive';
 
 @NgModule({
   declarations: [
