@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
-import { switchMap } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { catchError, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,9 @@ export class APIService {
 
   public registerUser(userData){
     console.log(this.cookie.getAll());
-    return this.http.post(`//localhost:8000/register`, userData).subscribe();
+    return this.http.post(`//localhost:8000/register`, userData).pipe(
+      catchError((error:HttpErrorResponse) => throwError(error))
+   );
   }
+
 }

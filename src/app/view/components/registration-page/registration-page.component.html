@@ -3,29 +3,37 @@
         <header class="registration__header">Регистрация</header>
         <form class="registration__form" [formGroup]="registerForm">
 
-            <span class="p-float-label">
-				<input id="float-input" type="text" pInputText formControlName="name" [ngClass]="{'error-field' : validationVisible && name.invalid }"> 
-				<label for="float-input" [ngClass]="{'error-text' : validationVisible && name.invalid }">ФИО</label>
-			</span>
-            <div class="error-text">{{ name.errors?.required && validationVisible ? 'Поле не заполнено' : ''}}</div>
+            <div class="form__input">
+                <div class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="name" [ngClass]="{'error-field' : validationVisible && name.invalid }">
+                    <label for="float-input" [ngClass]="{'error-text' : validationVisible && name.invalid }">ФИО</label>
+                </div>
+                <div class="error-text">{{ name.errors?.required && validationVisible ? 'Поле не заполнено' : ''}}</div>
+            </div>
 
-            <span class="p-float-label">
-				<input id="float-input" type="text" pInputText formControlName="email" [ngClass]="{'error-field' : validationVisible && email.invalid }"> 
-				<label for="float-input" [ngClass]="{'error-text' : validationVisible && email.invalid }">Email</label>
-			</span>
-            <div class="error-text">{{ (email.errors?.required && validationVisible) ? 'Поле не заполнено' : (email.errors?.email && validationVisible) ? 'Неверная электронная почта' : ''}}</div>
+            <div class="form__input">
+                <div class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="email" [ngClass]="{'error-field' : validationVisible && email.invalid }">
+                    <label for="float-input" [ngClass]="{'error-text' : validationVisible && email.invalid }">Email</label>
+                </div>
+                <div class="error-text">{{ (email.errors?.uniqueEmail && validationVisible) ? 'Такой Email уже существует' : (email.errors?.required && validationVisible) ? 'Поле не заполнено' : (email.errors?.email && validationVisible) ? 'Неверная электронная почта' : ''}}</div>
+            </div>
 
-            <span class="p-float-label">
-				<input id="float-input" type="text" pInputText formControlName="password" [ngClass]="{'error-field' : validationVisible && password.invalid }"> 
-				<label for="float-input" [ngClass]="{'error-text' : validationVisible && password.invalid }">Пароль</label>
-			</span>
-            <div class="error-text">{{ (password.errors?.required && validationVisible) ? 'Поле не заполнено' : (password.errors?.minlength && validationVisible) ? 'Пароль меньше 6 символов' : ''}}</div>
+            <div class="form__input">
+                <div class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="password" [ngClass]="{'error-field' : validationVisible && password.invalid }">
+                    <label for="float-input" [ngClass]="{'error-text' : validationVisible && password.invalid }">Пароль</label>
+                </div>
+                <div class="error-text">{{ (password.errors?.required && validationVisible) ? 'Поле не заполнено' : (password.errors?.minlength && validationVisible) ? 'Пароль меньше 6 символов' : ''}}</div>
+            </div>
 
-            <span class="p-float-label">
-				<input id="float-input" type="text" pInputText formControlName="password_conformation" [ngClass]="{'error-field' : (validationVisible && password_conformation.invalid) || (validationVisible && registerForm.errors?.passwordConformation) }"> 
-				<label for="float-input" [ngClass]="{'error-text' : (validationVisible && password_conformation.invalid) || ((validationVisible && registerForm.errors?.passwordConformation)) }">Повторите пароль</label>
-			</span>
-            <div class="error-text">{{ (password_conformation.errors?.required && validationVisible) ? 'Поле не заполнено' : (registerForm.errors?.passwordConformation && validationVisible) ? 'Пароли не совпадают' : ''}}</div>
+            <div class="form__input">
+                <div class="p-float-label">
+                    <input id="float-input" type="text" pInputText formControlName="password_confirmation" [ngClass]="{'error-field' : (validationVisible && password_confirmation.invalid) || (validationVisible && registerForm.errors?.passwordConfirmation) }">
+                    <label for="float-input" [ngClass]="{'error-text' : (validationVisible && password_confirmation.invalid) || ((validationVisible && registerForm.errors?.passwordConfirmation)) }">Повторите пароль</label>
+                </div>
+                <div class="error-text">{{ (password_confirmation.errors?.required && validationVisible) ? 'Поле не заполнено' : (registerForm.errors?.passwordConfirmation && validationVisible) ? 'Пароли не совпадают' : ''}}</div>
+            </div>
 
             <!-- <div class="registration__policy">
                 <input type="checkbox" checked>

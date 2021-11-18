@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { APIService } from 'src/app/services/api-service/api-service.service';
-import { passwordConformation } from '../../directives/password-conformation-validator.directive';
+import { passwordConfirmation } from '../../directives/password-confirmation-validator.directive';
 
 @Component({
   selector: 'rg-registration-page',
@@ -12,11 +12,12 @@ export class RegistrationPageComponent implements OnInit {
 
   public registerForm: FormGroup;
   public validationVisible: boolean = false;
+  private serverErrors
 
   get name() { return this.registerForm.get('name'); }
   get email() { return this.registerForm.get('email'); }
   get password() { return this.registerForm.get('password'); }
-  get password_conformation() { return this.registerForm.get('password_conformation'); }
+  get password_confirmation() { return this.registerForm.get('password_confirmation'); }
 
   constructor(
     private apiService: APIService,
@@ -29,16 +30,26 @@ export class RegistrationPageComponent implements OnInit {
       name: ['', Validators.required],
       email:['', [Validators.email, Validators.required]],
       password:['', [Validators.minLength(6), Validators.required]],
-      password_conformation:['', [Validators.required]]
+      password_confirmation:['', [Validators.required]]
     }, 
-    {validators : passwordConformation}
+    {validators : passwordConfirmation}
     );
   }
 
   public registerUser() {
     this.validationVisible = true;
     if (this.registerForm.valid) {
-    this.apiService.registerUser(this.registerForm.value);
+    this.apiService.registerUser(this.registerForm.value).subscribe(
+      (response) =>{
+        console.log(response)
+      },
+      (error)=>{
+        console.log(error)
+        if (error.error.errors.email){
+          this.registerForm.controls.email.setErrors({uniqueEmail:true});
+        }
+      }
+    );
     }
   }
 
