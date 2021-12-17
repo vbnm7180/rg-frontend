@@ -24,6 +24,7 @@ import { XsrfInterceptor } from './interceptors/xsrf.interceptor';
 import { CookieModule, CookieService } from 'ngx-cookie';
 import { SpinnerModule } from './modules/spinner/spinner.module';
 import { SpinnerService } from './services/spinner-service/spinner.service';
+import { PopupModule } from './modules/popup/popup.module';
 //import { PasswordConformationValidatorDirective } from './password-conformation-validator.directive';
 
 @NgModule({
@@ -48,6 +49,7 @@ import { SpinnerService } from './services/spinner-service/spinner.service';
     DeliveryPageModule,
     FormsModule,
     ReactiveFormsModule,
+    PopupModule,
     CookieModule.forRoot()
   ],
   providers: [

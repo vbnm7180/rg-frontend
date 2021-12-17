@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { InputTextModule } from 'primeng/inputtext';
 
 import { RegistrationPageComponent } from 'src/app/view/components/registration-page/registration-page.component';
+import { PopupModule } from '../popup/popup.module';
 
 
 
@@ -14,6 +15,7 @@ import { RegistrationPageComponent } from 'src/app/view/components/registration-
   imports: [
     CommonModule,
     SharedModule,
+    PopupModule,
     InputTextModule
   ],
   exports:[
