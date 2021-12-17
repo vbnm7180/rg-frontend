@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
 @Component({
   selector: 'rg-about-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private spinnerService: SpinnerService
+  ) { }
 
   ngOnInit(): void {
+    this.spinnerService.showSpinner();
+  }
+
+  public onImageLoad() {
+    this.spinnerService.hideSpinner();
   }
 
 }
