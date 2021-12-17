@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/products';
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { CartService } from 'src/app/services/cart-service/cart-service.service';
+import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
 
 @Component({
@@ -22,17 +23,21 @@ export class ProductsPageComponent implements OnInit {
 		private router:Router,
 		private activatedRoute:ActivatedRoute,
 		private apiService:APIService,
-		private cartService:CartService
+		private cartService:CartService,
+		private spinnerService: SpinnerService
 	) { }
 
 	ngOnInit(): void {
 		console.log(this.cartService.getCartProducts())
+
+		this.spinnerService.showSpinner();
 
 		this.activatedRoute.params.subscribe((data)=>{
 			this.apiService.getAllCategoryProducts(data.id).subscribe((response:any)=>{
 				console.log(this.products)
 				this.products=response.data;
 				console.log(this.products)
+				this.spinnerService.hideSpinner();
 			});
 		});
 

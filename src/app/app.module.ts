@@ -22,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { XsrfInterceptor } from './interceptors/xsrf.interceptor';
 import { CookieModule, CookieService } from 'ngx-cookie';
+import { SpinnerModule } from './modules/spinner/spinner.module';
+import { SpinnerService } from './services/spinner-service/spinner.service';
 //import { PasswordConformationValidatorDirective } from './password-conformation-validator.directive';
 
 @NgModule({
@@ -33,6 +35,7 @@ import { CookieModule, CookieService } from 'ngx-cookie';
     AppRoutingModule,
     HeaderModule,
     FooterModule,
+    SpinnerModule,
     MainPageModule,
     ProductsPageModule,
     ProductsDetailPageModule,
@@ -51,6 +54,7 @@ import { CookieModule, CookieService } from 'ngx-cookie';
     APIService,
     CartService,
     CookieService,
+    SpinnerService,
     { provide: HTTP_INTERCEPTORS, useClass: XsrfInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
