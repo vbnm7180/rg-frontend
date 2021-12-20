@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PopupService } from 'src/app/services/popup-service/popup.service';
 
 @Component({
   selector: 'rg-popup',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private popupService: PopupService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  public closePopup() {
+    if (this.popupService.getRedirectUrl()) {
+      this.router.navigateByUrl(this.popupService.getRedirectUrl());
+      this.popupService.hidePopup();
+      return;
+    }
+    this.popupService.hidePopup();
+  }
+
+  public getPopupHeader() {
+    console.log(this.popupService.getPopupHeader())
+    return this.popupService.getPopupHeader();
+
+  }
+
+  public getPopupContent() {
+    return this.popupService.getPopupContent();
+    
+  }
 }

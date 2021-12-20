@@ -1,6 +1,7 @@
 <rg-header></rg-header>
 <div class="pages-wrapper">
     <rg-spinner *ngIf="isSpinnerShown()"></rg-spinner>
+    <rg-popup *ngIf="isPopupShown()"></rg-popup>
     <router-outlet></router-outlet>
 </div>
 <rg-footer></rg-footer>

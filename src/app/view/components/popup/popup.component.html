@@ -1,3 +1,10 @@
 <div class="popup-wrapper">
-    <div class="popup"></div>
+    <div class="popup">
+        <div class="popup__icons">
+            <img src="../../../../assets/images/popup-checkmark.svg" alt="" class="checkmark-icon">
+            <button src="" alt="" class="close-icon pi pi-times" (click)="closePopup()"></button>
+        </div>
+        <div class="popup__header">{{this.getPopupHeader()}}</div>
+        <div class="popup__content">{{this.getPopupContent()}}</div>
+    </div>
 </div>

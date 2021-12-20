@@ -25,6 +25,7 @@ import { CookieModule, CookieService } from 'ngx-cookie';
 import { SpinnerModule } from './modules/spinner/spinner.module';
 import { SpinnerService } from './services/spinner-service/spinner.service';
 import { PopupModule } from './modules/popup/popup.module';
+import { PopupService } from './services/popup-service/popup.service';
 //import { PasswordConformationValidatorDirective } from './password-conformation-validator.directive';
 
 @NgModule({
@@ -57,6 +58,7 @@ import { PopupModule } from './modules/popup/popup.module';
     CartService,
     CookieService,
     SpinnerService,
+    PopupService,
     { provide: HTTP_INTERCEPTORS, useClass: XsrfInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

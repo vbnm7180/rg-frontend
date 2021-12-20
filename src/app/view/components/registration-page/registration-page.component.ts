@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { APIService } from 'src/app/services/api-service/api-service.service';
+import { PopupService } from 'src/app/services/popup-service/popup.service';
+import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 import { passwordConfirmation } from '../../directives/password-confirmation-validator.directive';
 
 @Component({
@@ -12,7 +14,9 @@ export class RegistrationPageComponent implements OnInit {
 
   public registerForm: FormGroup;
   public validationVisible: boolean = false;
-  private serverErrors
+  public popupHeader = 'Вы успешно зарегистрированы';
+  public popupContent = 'Закройте это окно, чтобы перейти на главную страницу.';
+  private serverErrors;
 
   get name() { return this.registerForm.get('name'); }
   get email() { return this.registerForm.get('email'); }
@@ -21,7 +25,9 @@ export class RegistrationPageComponent implements OnInit {
 
   constructor(
     private apiService: APIService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private popupService: PopupService,
+    private spinnerService: SpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -39,11 +45,15 @@ export class RegistrationPageComponent implements OnInit {
   public registerUser() {
     this.validationVisible = true;
     if (this.registerForm.valid) {
+      this.spinnerService.showSpinner();
     this.apiService.registerUser(this.registerForm.value).subscribe(
       (response) =>{
+        this.spinnerService.hideSpinner();
+        this.popupService.showPopup(this.popupHeader, this.popupContent, '/');
         console.log(response)
       },
       (error)=>{
+        this.spinnerService.hideSpinner();
         console.log(error)
         if (error.error.errors.email){
           this.registerForm.controls.email.setErrors({uniqueEmail:true});

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { PopupService } from './services/popup-service/popup.service';
 import { SpinnerService } from './services/spinner-service/spinner.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class AppComponent {
 
   constructor(
     private http: HttpClient,
-    private spinnerService: SpinnerService
+    private spinnerService: SpinnerService,
+    private popupService: PopupService
   ){
 
   }
@@ -23,5 +25,9 @@ export class AppComponent {
 
   public isSpinnerShown() {
     return this.spinnerService.isSpinnerShown();
+  }
+
+  public isPopupShown() {
+    return this.popupService.isPopupShown();
   }
 }
