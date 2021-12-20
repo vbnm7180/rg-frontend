@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { APIService } from 'src/app/services/api-service/api-service.service';
+import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
 @Component({
   selector: 'rg-login-page',
@@ -7,9 +10,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  public loginForm: FormGroup;  
+  public validationVisible: boolean = false;
+
+  get email() { return this.loginForm.get('email'); }
+  get password() { return this.loginForm.get('password'); }
+
+  constructor(
+    private apiService: APIService,
+    private spinnerService: SpinnerService,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+
+  public loginUser() {
+    this.validationVisible = true;
+    if (this.loginForm.valid) {
+      this.spinnerService.showSpinner();
+    this.apiService.loginUser(this.loginForm.value).subscribe(
+      (response) =>{
+        this.spinnerService.hideSpinner();
+        console.log(response)
+      },
+      (error)=>{
+        this.spinnerService.hideSpinner();
+        console.log(error)
+        if (error.error.errors.email){
+          this.loginForm.controls.email.setErrors({emailCorrect:true});
+        }
+        if (error.error.errors.password){
+          this.loginForm.controls.password.setErrors({passwordCorrect:true});
+        }
+      }
+    );
+    }
   }
 
 }

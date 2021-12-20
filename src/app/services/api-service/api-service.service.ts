@@ -33,4 +33,11 @@ export class APIService {
    );
   }
 
+  public loginUser(userData){
+    console.log(this.cookie.getAll());
+    return this.http.post(`//localhost:8000/login`, userData).pipe(
+      catchError((error:HttpErrorResponse) => throwError(error))
+   );
+  }
+
 }

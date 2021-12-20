@@ -53,3 +53,17 @@
 ::ng-deep .p-inputtext {
     width: 304px;
 }
+
+.error-field {
+    border: 1px solid #DF2121 !important;
+}
+
+.error-text {
+    height: 16px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    color: #DF2121 !important;
+}

@@ -1,16 +1,18 @@
 <div class="login-page">
     <div class="login-page__container">
         <header class="login__header">Вход</header>
-        <form class="login__form">
-            <span class="p-float-label">
-				<input id="float-input" type="text" pInputText> 
-				<label for="float-input">Email</label>
-			</span>
-            <span class="p-float-label">
-				<input id="float-input" type="text" pInputText> 
-				<label for="float-input">Пароль</label>
-			</span>
-            <button class="login-btn">Войти</button>
+        <form class="login__form" [formGroup]="loginForm">
+            <div class="p-float-label">
+                <input id="float-input" type="text" pInputText formControlName="email" [ngClass]="{'error-field' : validationVisible && email.invalid }">
+                <label for="float-input" [ngClass]="{'error-text' : validationVisible && email.invalid }">Email</label>
+            </div>
+            <div class="error-text">{{ (email.errors?.required && validationVisible) ? 'Поле не заполнено' : (email.errors?.emailCorrect && validationVisible) ? 'Неверная электронная почта' : ''}}</div>
+            <div class="p-float-label">
+                <input id="float-input" type="text" pInputText formControlName="password" [ngClass]="{'error-field' : validationVisible && password.invalid }">
+                <label for="float-input" [ngClass]="{'error-text' : validationVisible && password.invalid }">Пароль</label>
+            </div>
+            <div class="error-text">{{ (password.errors?.required && validationVisible) ? 'Поле не заполнено' : (password.errors?.passwordCorrect && validationVisible) ? 'Неверный пароль' : ''}}</div>
+            <button class="login-btn" (click)="loginUser()">Войти</button>
         </form>
     </div>
 </div>
