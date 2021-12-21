@@ -21,10 +21,10 @@
 }
 
 .login__form {
+    height: 140px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 }
 
 .login-btn {
@@ -43,7 +43,7 @@
     &:active {
         background: #EFCF6B;
     }
-    margin-top: 26px;
+    margin-top: 20px;
 }
 
 ::ng-deep .p-float-label:nth-child(2) {

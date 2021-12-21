@@ -33,6 +33,7 @@ export class LoginPageComponent implements OnInit {
     this.validationVisible = true;
     if (this.loginForm.valid) {
       this.spinnerService.showSpinner();
+      console.log(this.loginForm.value)
     this.apiService.loginUser(this.loginForm.value).subscribe(
       (response) =>{
         this.spinnerService.hideSpinner();
