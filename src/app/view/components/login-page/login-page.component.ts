@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
@@ -19,7 +20,8 @@ export class LoginPageComponent implements OnInit {
   constructor(
     private apiService: APIService,
     private spinnerService: SpinnerService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +40,7 @@ export class LoginPageComponent implements OnInit {
       (response) =>{
         this.spinnerService.hideSpinner();
         console.log(response)
+        this.router.navigateByUrl('/account');
       },
       (error)=>{
         this.spinnerService.hideSpinner();

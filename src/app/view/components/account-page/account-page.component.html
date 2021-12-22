@@ -1,38 +1,38 @@
 <div class="account-page">
     <div class="account-page__container">
-        <button class="logout">
+        <button class="logout-btn" (click)="logoutUser()">
             <span class="pi pi-sign-out logout-icon"></span> Выйти
         </button>
         <p-tabView>
             <p-tabPanel header="Личный кабинет">
                 <div class="form-wrapper">
-                    <form class="account__form">
+                    <form class="account__form" [formGroup]="userForm">
                         <span class="p-float-label">
-						<input id="float-input" type="text" pInputText> 
-						<label for="float-input">ФИО</label>
-					</span>
+                            <input id="float-input" type="text" pInputText formControlName="name">
+                            <label for="float-input">ФИО</label>
+                        </span>
                         <span class="p-float-label">
-						<input id="float-input" type="text" pInputText> 
-						<label for="float-input">Телефон</label>
-					</span>
+                            <input id="float-input" type="text" pInputText formControlName="phone">
+                            <label for="float-input">Телефон</label>
+                        </span>
+                        <!-- <span class="p-float-label">
+                            <input id="float-input" type="text" pInputText formControlName="email" [ngClass]="{'error-field' : validationVisible && email.invalid }">
+                            <label for="float-input">Email</label>
+                        </span> -->
                         <span class="p-float-label">
-						<input id="float-input" type="text" pInputText> 
-						<label for="float-input">Email</label>
-					</span>
+                            <input id="float-input" type="text" pInputText formControlName="city">
+                            <label for="float-input">Город</label>
+                        </span>
                         <span class="p-float-label">
-						<input id="float-input" type="text" pInputText> 
-						<label for="float-input">Город</label>
-					</span>
+                            <input id="float-input" type="text" pInputText formControlName="address">
+                            <label for="float-input">Улица/Дом/Квартира</label>
+                        </span>
                         <span class="p-float-label">
-						<input id="float-input" type="text" pInputText> 
-						<label for="float-input">Улица/Дом/Квартира</label>
-					</span>
-                        <span class="p-float-label">
-						<input id="float-input" type="text" pInputText> 
-						<label for="float-input">Индекс</label>
-					</span>
+                            <input id="float-input" type="text" pInputText formControlName="postcode">
+                            <label for="float-input">Индекс</label>
+                        </span>
                     </form>
-                    <button class="save-btn">Сохранить</button>
+                    <button class="save-btn" (click)="updateUser()">Сохранить</button>
                 </div>
 
             </p-tabPanel>

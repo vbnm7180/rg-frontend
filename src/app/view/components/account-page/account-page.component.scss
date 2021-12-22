@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.logout {
+.logout-btn {
     display: flex;
     align-items: center;
     font-family: Nunito;
@@ -21,6 +21,14 @@
     background: transparent;
     align-self: flex-end;
     margin-bottom: 15px;
+    padding: 4px;
+    border-radius: 5px;
+    &:hover {
+        background: #D3D3D3;
+    }
+    &:active {
+        background: #C0C0C0;
+    }
 }
 
 .logout-icon {
