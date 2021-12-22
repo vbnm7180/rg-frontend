@@ -27,7 +27,11 @@ export class APIService {
   }
 
   public makeOrder(orderData) {
-    this.http.post(`http://localhost:8000/api/create-order`,orderData);
+    return this.http.post(`http://localhost:8000/api/create-order`,orderData);
+  }
+
+  public getOrders() {
+    return this.http.get(`http://localhost:8000/api/orders`);
   }
 
   public registerUser(userData){

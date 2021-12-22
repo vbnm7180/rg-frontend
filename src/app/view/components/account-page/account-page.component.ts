@@ -41,6 +41,16 @@ export class AccountPageComponent implements OnInit {
 		  console.log(this.userForm.value)
 
 	  });
+
+	  this.apiService.getOrders().subscribe((response:any)=>{
+		console.log(response)
+		this.orders = response.data.map((order)=>{
+			order.products = JSON.parse(order.products);
+		});
+		this.orders = response.data;
+		console.log(this.orders)
+
+	});
     // this.orders = [{
     //   id: '92929',
     //   name: 'Иванов Иван',

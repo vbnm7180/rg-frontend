@@ -3,31 +3,49 @@
         <div class="cart__header">Оформление заказа</div>
         <div class="cart__body">
 
-            <form class="cart__form">
-                <span class="p-float-label">
-					<input id="float-input" type="text" pInputText> 
-					<label for="float-input" formControlName="name">ФИО</label>
-				</span>
-                <span class="p-float-label">
-					<input id="float-input" type="text" pInputText> 
-					<label for="float-input" formControlName="phone">Номер телефона</label>
-				</span>
-                <span class="p-float-label">
-					<input id="float-input" type="text" pInputText> 
-					<label for="float-input" formControlName="email">Электронная почта</label>
-				</span>
-                <span class="p-float-label">
-					<input id="float-input" type="text" pInputText> 
-					<label for="float-input" formControlName="city">Город</label>
-				</span>
-                <span class="p-float-label">
-					<input id="float-input" type="text" pInputText> 
-					<label for="float-input" formControlName="address">Улица/Дом/Квартира</label>
-				</span>
-                <span class="p-float-label">
-					<input id="float-input" type="text" pInputText> 
-					<label for="float-input" formControlName="postcode">Индекс</label>
-				</span>
+            <form class="cart__form" [formGroup]="cartForm">
+                <div class="form-input">
+                    <div class="p-float-label">
+                        <input id="float-input" type="text" pInputText formControlName="name" [ngClass]="{'error-field' : validationVisible && name.invalid }">
+                        <label for="float-input" [ngClass]="{'error-text' : validationVisible && name.invalid }">ФИО</label>
+                    </div>
+                    <div class="error-text">{{ (name.errors?.required && validationVisible) ? 'Поле не заполнено' : ''}}</div>
+                </div>
+                <div class="form-input">
+                    <div class="p-float-label">
+                        <input id="float-input" type="text" pInputText formControlName="phone" [ngClass]="{'error-field' : validationVisible && phone.invalid }">
+                        <label for="float-input" [ngClass]="{'error-text' : validationVisible && phone.invalid }">Номер телефона</label>
+                    </div>
+                    <div class="error-text">{{ (phone.errors?.required && validationVisible) ? 'Поле не заполнено' : ''}}</div>
+                </div>
+                <div class="form-input">
+                    <div class="p-float-label">
+                        <input id="float-input" type="text" pInputText formControlName="email" [ngClass]="{'error-field' : validationVisible && email.invalid }">
+                        <label for="float-input" [ngClass]="{'error-text' : validationVisible && email.invalid }">Электронная почта</label>
+                    </div>
+                    <div class="error-text">{{ (email.errors?.required && validationVisible) ? 'Поле не заполнено' : (email.errors?.email && validationVisible) ? 'Неверная электронная почта' : ''}}</div>
+                </div>
+                <div class="form-input">
+                    <div class="p-float-label">
+                        <input id="float-input" type="text" pInputText formControlName="city" [ngClass]="{'error-field' : validationVisible && city.invalid }">
+                        <label for="float-input" [ngClass]="{'error-text' : validationVisible && city.invalid }">Город</label>
+                    </div>
+                    <div class="error-text">{{ (city.errors?.required && validationVisible) ? 'Поле не заполнено' : ''}}</div>
+                </div>
+                <div class="form-input">
+                    <div class="p-float-label">
+                        <input id="float-input" type="text" pInputText formControlName="address" [ngClass]="{'error-field' : validationVisible && address.invalid }">
+                        <label for="float-input" [ngClass]="{'error-text' : validationVisible && address.invalid }">Улица/Дом/Квартира</label>
+                    </div>
+                    <div class="error-text">{{ (address.errors?.required && validationVisible) ? 'Поле не заполнено' : ''}}</div>
+                </div>
+                <div class="form-input">
+                    <div class="p-float-label">
+                        <input id="float-input" type="text" pInputText formControlName="postcode" [ngClass]="{'error-field' : validationVisible && postcode.invalid }">
+                        <label for="float-input" [ngClass]="{'error-text' : validationVisible && postcode.invalid }">Индекс</label>
+                    </div>
+                    <div class="error-text">{{ (postcode.errors?.required && validationVisible) ? 'Поле не заполнено' : ''}}</div>
+                </div>
             </form>
 
             <div class="order-price__wrapper">
