@@ -1,9 +1,12 @@
 <div class="cart-products-page">
     <div class="cart__container">
-        <div class="cart__header">
+        <div class="cart-empty" *ngIf="!products.length">
+            Корзина пуста
+        </div>
+        <div class="cart__header" *ngIf="products.length">
             Корзина
         </div>
-        <div class="cart__body">
+        <div class="cart__body" *ngIf="products.length">
             <div class="product__list">
                 <div class="list__header">
                     <div class="header__name">Наименование товара</div>
@@ -11,7 +14,7 @@
                 </div>
                 <div class="list__item" *ngFor="let product of products; let i = index">
                     <div class="item__number">{{i+1}}.</div>
-                    <img src="../../../../assets/images/product1.jpg" alt="" class="item__image">
+                    <img src="{{product.image_path}}" alt="" class="item__image">
                     <div class="item__name">{{product.name}}</div>
                     <div class="item__price">{{product.price}} ₽</div>
                     <button class="del-from-cart__btn pi pi-times" (click)="deleteFromCart(product)"></button>
