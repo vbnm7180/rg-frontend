@@ -48,14 +48,14 @@ export class CartFormPageComponent implements OnInit {
       date: [''],
       products: [[]],
       price: [''],
-      user_id: [''],
+      user_id: [0],
       status: ['В обработке']
     });
 
     this.apiService.getUser().subscribe((user:any) => {
       if (user) {
         this.cartForm.patchValue(user);
-        this.cartForm.patchValue({user_id: user.id});
+        this.cartForm.patchValue({user_id: parseInt(user.id,10)});
       }
 
     });
@@ -74,6 +74,7 @@ export class CartFormPageComponent implements OnInit {
       this.apiService.makeOrder(this.cartForm.value).subscribe(() => {
         this.spinnerService.hideSpinner();
         this.popupService.showPopup(this.popupHeader, this.popupContent, '/');
+        this.cartService.emptyCart();
       });
     }
 

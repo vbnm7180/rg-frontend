@@ -2,7 +2,7 @@
     <div class="product__container">
         <div class="product__header">{{product.name}}</div>
         <div class="product__body">
-            <img src="../../../../assets/images/product1.jpg" alt="" class="product__image">
+            <img [src]="product.image_path" alt="" class="product__image">
             <div class="product__attributes">
                 <div class="attribute" *ngFor="let attribute of product.attributes">
                     <span class="attribute__name">{{attribute.name}}: </span>
@@ -11,8 +11,8 @@
             </div>
             <div class="product__price-wrapper">
                 <div class="product__price">{{product.price}} ₽</div>
-                <button class="add-to-cart__btn" (click)="goToCart($event)" *ngIf="!isInCart(product)">Добавить в корзину</button>
-                <button class="move-to-cart__btn" [routerLink]="['/cart']" *ngIf="isInCart(product)">Перейти в корзину</button>
+                <button class="add-to-cart__btn" (click)="addToCart($event)" *ngIf="!isInCart(product)">Добавить в корзину</button>
+                <button class="move-to-cart__btn" [routerLink]="['/cart']" (click)="goToCart($event)" *ngIf="isInCart(product)">Перейти в корзину</button>
             </div>
         </div>
         <div class="product__description">

@@ -34,7 +34,7 @@ export class ProductsPageComponent implements OnInit {
 
 		this.activatedRoute.params.subscribe((data)=>{
 			this.apiService.getAllCategoryProducts(data.id).subscribe((response:any)=>{
-				console.log(this.products)
+				console.log(response)
 				this.products=response.data;
 				console.log(this.products)
 				this.spinnerService.hideSpinner();

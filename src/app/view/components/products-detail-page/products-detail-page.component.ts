@@ -26,7 +26,7 @@ export class ProductsDetailPageComponent implements OnInit {
     this.spinnerService.showSpinner();
 
     this.activatedRoute.params.subscribe((data)=>{
-      console.log(data.id)
+      console.log(data)
       this.apiService.getProduct(data.id).subscribe((response:any)=>{
         console.log(response)
         this.product = new Product(response.data);
@@ -57,13 +57,18 @@ export class ProductsDetailPageComponent implements OnInit {
   //   };
    }
 
-   addToCart(product:Product) {
-		this.cartService.addProductToCart(product);
+   addToCart(event:MouseEvent,product:Product) {
+		console.log(product)
+		//event.stopPropagation();
+		this.cartService.addProductToCart(this.product);
 	}
 
-   isInCart(product:Product) {
-     console.log(this.cartService.isProductInCart(product))
-		return this.cartService.isProductInCart(product);
+	isInCart(product:Product) {
+		return this.cartService.isProductInCart(this.product);
+	}
+
+	goToCart(event:MouseEvent) {
+		//event.stopPropagation();
 	}
 
 }

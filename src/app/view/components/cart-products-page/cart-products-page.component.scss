@@ -55,10 +55,15 @@
 }
 
 .item__image {
-    margin-right: 55px;
     height: 80px;
     width: 100px;
     border-radius: 3px;
+}
+
+.image-wrapper {
+    height: 80px;
+    width: 100px;
+    margin-right: 20px;
 }
 
 .item__number {
@@ -71,12 +76,17 @@
 }
 
 .item__name {
-    min-width: 395px;
+    width: 400px;
+    margin-right: 30px;
     font-family: Oswald;
     font-weight: bold;
     font-size: 18px;
     line-height: 21px;
     color: #323232;
+    &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
 }
 
 .item__price {

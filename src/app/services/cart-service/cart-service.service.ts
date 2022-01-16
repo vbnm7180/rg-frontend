@@ -45,6 +45,11 @@ export class CartService {
     this.syncProducts();
   }
 
+  emptyCart() {
+    this.products = [];
+    this.syncProducts();
+  }
+
   isProductInCart(product:Product) {
     //console.log(this.products)
     //console.log(product)
