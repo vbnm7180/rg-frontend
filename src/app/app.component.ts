@@ -15,11 +15,11 @@ export class AppComponent {
     private http: HttpClient,
     private spinnerService: SpinnerService,
     private popupService: PopupService
-  ){
+  ) {
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.http.get('//localhost:8000/sanctum/csrf-cookie').subscribe();
   }
 

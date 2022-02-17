@@ -11,5 +11,4 @@ export class DeliveryPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

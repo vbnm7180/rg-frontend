@@ -34,6 +34,6 @@ export class PopupComponent implements OnInit {
 
   public getPopupContent() {
     return this.popupService.getPopupContent();
-    
+
   }
 }

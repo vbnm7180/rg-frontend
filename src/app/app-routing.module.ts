@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AccountGuard } from './guards/account-guard/account.guard';
-import { LoginGuard } from './guards/login-guard/login.guard';
-import { RegisterGuard } from './guards/register-guard/register.guard';
 
 import { AboutPageComponent } from './view/components/about-page/about-page.component';
 import { AccountPageComponent } from './view/components/account-page/account-page.component';
@@ -38,14 +36,10 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    //implement later
-    //canActivate: [LoginGuard],
     component: LoginPageComponent
   },
   {
     path: 'register',
-    //implement later
-    //canActivate: [RegisterGuard],
     component: RegistrationPageComponent
   },
   {
@@ -65,7 +59,7 @@ const routes: Routes = [
     path: '**',
     component: MainPageComponent
   },
-  
+
 ];
 
 @NgModule({

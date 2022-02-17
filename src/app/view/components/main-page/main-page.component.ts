@@ -9,16 +9,16 @@ import { SpinnerService } from 'src/app/services/spinner-service/spinner.service
 export class MainPageComponent implements OnInit {
 
   slides = [
-    {img: "../../assets/images/slide1.png"},
-    {img: "../../assets/images/slide2.png"}
+    { img: "../../assets/images/slide1.png" },
+    { img: "../../assets/images/slide2.png" }
   ];
   slideConfig = {
-    "arrows":true,
-    "prevArrow":".left-slide-btn",
-    "nextArrow":".right-slide-btn",
-    "dots":true,
-    "appendDots":".slide-dots",
-    "dotsClass":"dot-item"
+    "arrows": true,
+    "prevArrow": ".left-slide-btn",
+    "nextArrow": ".right-slide-btn",
+    "dots": true,
+    "appendDots": ".slide-dots",
+    "dotsClass": "dot-item"
 
   };
 
@@ -33,5 +33,4 @@ export class MainPageComponent implements OnInit {
   public onImageLoad() {
     this.spinnerService.hideSpinner();
   }
-
 }

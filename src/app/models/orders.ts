@@ -17,7 +17,15 @@ export class Order {
 	constructor (data){
 		this.id = data.id || '';
 		this.name = data.name || '';
+		this.email = data.email || '';
+		this.city = data.city || '';
+		this.address = data.address || '';
+		this.postcode = data.postcode || '';
+		this.phone = data.phone || '';
+		this.user_id = data.user_id || '';
+		this.date = data.date || '';
 		this.price = data.price || 0;
-		//add later
+		this.products = data.products || [];
+		this.status = data.status || '';
 	}
 }

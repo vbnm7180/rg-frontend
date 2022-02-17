@@ -16,7 +16,6 @@ export class RegistrationPageComponent implements OnInit {
   public validationVisible: boolean = false;
   public popupHeader = 'Вы успешно зарегистрированы';
   public popupContent = 'Закройте это окно, чтобы перейти на главную страницу.';
-  private serverErrors;
 
   get name() { return this.registerForm.get('name'); }
   get email() { return this.registerForm.get('email'); }
@@ -33,12 +32,12 @@ export class RegistrationPageComponent implements OnInit {
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group(
       {
-      name: ['', Validators.required],
-      email:['', [Validators.email, Validators.required]],
-      password:['', [Validators.minLength(6), Validators.required]],
-      password_confirmation:['', [Validators.required]]
-    }, 
-    {validators : passwordConfirmation}
+        name: ['', Validators.required],
+        email: ['', [Validators.email, Validators.required]],
+        password: ['', [Validators.minLength(6), Validators.required]],
+        password_confirmation: ['', [Validators.required]]
+      },
+      { validators: passwordConfirmation }
     );
   }
 
@@ -46,21 +45,19 @@ export class RegistrationPageComponent implements OnInit {
     this.validationVisible = true;
     if (this.registerForm.valid) {
       this.spinnerService.showSpinner();
-    this.apiService.registerUser(this.registerForm.value).subscribe(
-      (response) =>{
-        this.spinnerService.hideSpinner();
-        this.popupService.showPopup(this.popupHeader, this.popupContent, '/');
-        console.log(response)
-      },
-      (error)=>{
-        this.spinnerService.hideSpinner();
-        console.log(error)
-        if (error.error.errors.email){
-          this.registerForm.controls.email.setErrors({uniqueEmail:true});
+      this.apiService.registerUser(this.registerForm.value).subscribe(
+        (response) => {
+          this.spinnerService.hideSpinner();
+          this.popupService.showPopup(this.popupHeader, this.popupContent, '/');
+        },
+        (error) => {
+          this.spinnerService.hideSpinner();
+          console.log(error)
+          if (error.error.errors.email) {
+            this.registerForm.controls.email.setErrors({ uniqueEmail: true });
+          }
         }
-      }
-    );
+      );
     }
   }
-
 }

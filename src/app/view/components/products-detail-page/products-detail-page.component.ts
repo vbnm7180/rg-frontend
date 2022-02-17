@@ -7,7 +7,7 @@ import { SpinnerService } from 'src/app/services/spinner-service/spinner.service
 
 @Component({
   selector: 'rg-products-detail-page',
-  templateUrl:'./products-detail-page.component.html',
+  templateUrl: './products-detail-page.component.html',
   styleUrls: ['./products-detail-page.component.scss']
 })
 export class ProductsDetailPageComponent implements OnInit {
@@ -15,9 +15,9 @@ export class ProductsDetailPageComponent implements OnInit {
   public product: Product = new Product({});
 
   constructor(
-    private router:Router,
-		private activatedRoute:ActivatedRoute,
-		private apiService:APIService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private apiService: APIService,
     private cartService: CartService,
     private spinnerService: SpinnerService
   ) { }
@@ -25,50 +25,23 @@ export class ProductsDetailPageComponent implements OnInit {
   ngOnInit(): void {
     this.spinnerService.showSpinner();
 
-    this.activatedRoute.params.subscribe((data)=>{
-      console.log(data)
-      this.apiService.getProduct(data.id).subscribe((response:any)=>{
-        console.log(response)
+    this.activatedRoute.params.subscribe((data) => {
+      this.apiService.getProduct(data.id).subscribe((response: any) => {
         this.product = new Product(response.data);
         this.spinnerService.hideSpinner();
-        console.log(this.product)
       });
-			//this.apiService.getProduct(data.id).subscribe((product:any)=>{
-				//this.product=product.data;
-			//});
-		});
+    });
+  }
 
-  //   this.product = {
-  //     id: '1',
-  //     name: 'Sega Mega Drive (PAL) Серая в коробке',
-  //     price: 200000,
-  //     imagePath: '/test1',
-  //     categoryID: '1',
-  //     description: 'Игровая приставка четвёртого поколения, разработанная и выпускавшаяся компанией Sega. Приставка была выпущена в 1988. Sega Mega Drive — это третья аппаратная платформа от Sega после Sega Master System.она стала первой консолью четвертого поколения, достигшей значительного успеха на рынках Северной Америки и Европы, где она конкурировала с широким спектром платформ как специализированных игровых устройств, так и домашних компьютеров. Успеху приставки способствовали обилие портированных аркадных игр, популярность эксклюзивной для Genesis игры Sonic the Hedgehog, несколько популярных спортивных серий игр, а также агрессивный молодёжный маркетинг, позиционирующий систему как «крутую консоль» для подростков.',
-  //     attributes: [{
-  //       name: 'Регион',
-  //       value: 'PAL'
-  //     },
-  //     {
-  //       name: 'Комплект',
-  //       value: 'Коробка, приставка, 2 геймпада, картиридж с игрой Street Fighter 2'
-  //     }
-  //   ]
-  //   };
-   }
+  addToCart(event: MouseEvent, product: Product) {
+    console.log(product)
+    this.cartService.addProductToCart(this.product);
+  }
 
-   addToCart(event:MouseEvent,product:Product) {
-		console.log(product)
-		//event.stopPropagation();
-		this.cartService.addProductToCart(this.product);
-	}
+  isInCart(product: Product) {
+    return this.cartService.isProductInCart(this.product);
+  }
 
-	isInCart(product:Product) {
-		return this.cartService.isProductInCart(this.product);
-	}
-
-	goToCart(event:MouseEvent) {
-		//event.stopPropagation();
-	}
-
+  goToCart(event: MouseEvent) {
+  }
 }

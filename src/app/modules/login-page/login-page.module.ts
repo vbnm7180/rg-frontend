@@ -5,8 +5,6 @@ import { InputTextModule } from 'primeng/inputtext';
 
 import { LoginPageComponent } from 'src/app/view/components/login-page/login-page.component';
 
-
-
 @NgModule({
   declarations: [
     LoginPageComponent
@@ -16,7 +14,7 @@ import { LoginPageComponent } from 'src/app/view/components/login-page/login-pag
     SharedModule,
     InputTextModule
   ],
-  exports:[
+  exports: [
     LoginPageComponent
   ]
 })

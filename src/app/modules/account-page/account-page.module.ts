@@ -6,8 +6,6 @@ import { TabViewModule } from 'primeng/tabview';
 
 import { AccountPageComponent } from 'src/app/view/components/account-page/account-page.component';
 
-
-
 @NgModule({
   declarations: [
     AccountPageComponent
@@ -18,7 +16,7 @@ import { AccountPageComponent } from 'src/app/view/components/account-page/accou
     InputTextModule,
     TabViewModule
   ],
-  exports:[
+  exports: [
     AccountPageComponent
   ]
 })

@@ -19,5 +19,4 @@ export class AboutPageComponent implements OnInit {
   public onImageLoad() {
     this.spinnerService.hideSpinner();
   }
-
 }

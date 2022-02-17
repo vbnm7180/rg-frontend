@@ -4,8 +4,6 @@ import { SharedModule } from '../shared/shared.module';
 
 import { CartProductsPageComponent } from 'src/app/view/components/cart-products-page/cart-products-page.component';
 
-
-
 @NgModule({
   declarations: [
     CartProductsPageComponent
@@ -14,7 +12,7 @@ import { CartProductsPageComponent } from 'src/app/view/components/cart-products
     CommonModule,
     SharedModule
   ],
-  exports:[
+  exports: [
     CartProductsPageComponent
   ]
 })

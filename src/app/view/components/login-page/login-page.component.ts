@@ -11,7 +11,7 @@ import { SpinnerService } from 'src/app/services/spinner-service/spinner.service
 })
 export class LoginPageComponent implements OnInit {
 
-  public loginForm: FormGroup;  
+  public loginForm: FormGroup;
   public validationVisible: boolean = false;
 
   get email() { return this.loginForm.get('email'); }
@@ -36,24 +36,22 @@ export class LoginPageComponent implements OnInit {
     if (this.loginForm.valid) {
       this.spinnerService.showSpinner();
       console.log(this.loginForm.value)
-    this.apiService.loginUser(this.loginForm.value).subscribe(
-      (response) =>{
-        this.spinnerService.hideSpinner();
-        console.log(response)
-        this.router.navigateByUrl('/account');
-      },
-      (error)=>{
-        this.spinnerService.hideSpinner();
-        console.log(error)
-        if (error.error.errors.email){
-          this.loginForm.controls.email.setErrors({emailCorrect:true});
+      this.apiService.loginUser(this.loginForm.value).subscribe(
+        (response) => {
+          this.spinnerService.hideSpinner();
+          this.router.navigateByUrl('/account');
+        },
+        (error) => {
+          this.spinnerService.hideSpinner();
+          console.log(error)
+          if (error.error.errors.email) {
+            this.loginForm.controls.email.setErrors({ emailCorrect: true });
+          }
+          if (error.error.errors.password) {
+            this.loginForm.controls.password.setErrors({ passwordCorrect: true });
+          }
         }
-        if (error.error.errors.password){
-          this.loginForm.controls.password.setErrors({passwordCorrect:true});
-        }
-      }
-    );
+      );
     }
   }
-
 }

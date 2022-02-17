@@ -5,8 +5,6 @@ import { InputTextModule } from 'primeng/inputtext';
 
 import { AboutPageComponent } from 'src/app/view/components/about-page/about-page.component';
 
-
-
 @NgModule({
   declarations: [
     AboutPageComponent
@@ -16,7 +14,7 @@ import { AboutPageComponent } from 'src/app/view/components/about-page/about-pag
     SharedModule,
     InputTextModule
   ],
-  exports:[
+  exports: [
     AboutPageComponent
   ]
 })

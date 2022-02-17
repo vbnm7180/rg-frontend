@@ -5,8 +5,6 @@ import { InputTextModule } from 'primeng/inputtext';
 
 import { CartFormPageComponent } from 'src/app/view/components/cart-form-page/cart-form-page.component';
 
-
-
 @NgModule({
   declarations: [
     CartFormPageComponent
@@ -16,7 +14,7 @@ import { CartFormPageComponent } from 'src/app/view/components/cart-form-page/ca
     SharedModule,
     InputTextModule
   ],
-  exports:[
+  exports: [
     CartFormPageComponent
   ]
 })

@@ -12,7 +12,7 @@ import { ProductsDetailPageComponent } from 'src/app/view/components/products-de
     CommonModule,
     SharedModule
   ],
-  exports:[
+  exports: [
     ProductsDetailPageComponent
   ]
 })

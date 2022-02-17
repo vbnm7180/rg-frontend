@@ -12,7 +12,7 @@ import { SpinnerComponent } from 'src/app/view/components/spinner/spinner.compon
     CommonModule,
     SharedModule
   ],
-  exports:[
+  exports: [
     SpinnerComponent
   ]
 })

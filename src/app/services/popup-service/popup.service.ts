@@ -28,7 +28,7 @@ export class PopupService {
     return this.redirectUrl;
   }
 
-  public showPopup(popupHeader: string,popupContent: string, url?: string) {
+  public showPopup(popupHeader: string, popupContent: string, url?: string) {
     this.popupHeader = popupHeader;
     this.popupContent = popupContent;
     this.redirectUrl = url;

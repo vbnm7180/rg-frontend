@@ -26,7 +26,6 @@ export class CartFormPageComponent implements OnInit {
   get postcode() { return this.cartForm.get('postcode'); }
   get phone() { return this.cartForm.get('phone'); }
 
-
   constructor(
     private cartService: CartService,
     private apiService: APIService,
@@ -52,17 +51,17 @@ export class CartFormPageComponent implements OnInit {
       status: ['В обработке']
     });
 
-    this.apiService.getUser().subscribe((user:any) => {
+    this.apiService.getUser().subscribe((user: any) => {
       if (user) {
         this.cartForm.patchValue(user);
-        this.cartForm.patchValue({user_id: parseInt(user.id,10)});
+        this.cartForm.patchValue({ user_id: parseInt(user.id, 10) });
       }
-
     });
   }
 
   makeOrder() {
     this.validationVisible = true;
+
     if (this.cartForm.valid) {
       this.spinnerService.showSpinner();
       this.cartForm.patchValue({
@@ -70,14 +69,13 @@ export class CartFormPageComponent implements OnInit {
         products: JSON.stringify(this.products),
         price: this.getCartPrice()
       });
-      
+
       this.apiService.makeOrder(this.cartForm.value).subscribe(() => {
         this.spinnerService.hideSpinner();
         this.popupService.showPopup(this.popupHeader, this.popupContent, '/');
         this.cartService.emptyCart();
       });
     }
-
   }
 
   getCartProducts() {
@@ -87,5 +85,4 @@ export class CartFormPageComponent implements OnInit {
   getCartPrice() {
     return this.cartService.getCartPrice();
   }
-
 }

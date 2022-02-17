@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-import {MenuModule} from 'primeng/menu';
-import {MenubarModule} from 'primeng/menubar';
+import { MenuModule } from 'primeng/menu';
+import { MenubarModule } from 'primeng/menubar';
 
 import { FooterComponent } from 'src/app/view/components/footer/footer.component';
-
-
 
 @NgModule({
   declarations: [
@@ -18,7 +16,7 @@ import { FooterComponent } from 'src/app/view/components/footer/footer.component
     MenuModule,
     MenubarModule
   ],
-  exports:[
+  exports: [
     FooterComponent
   ]
 })

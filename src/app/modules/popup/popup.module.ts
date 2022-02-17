@@ -12,7 +12,7 @@ import { PopupComponent } from 'src/app/view/components/popup/popup.component';
     CommonModule,
     SharedModule
   ],
-  exports:[
+  exports: [
     PopupComponent
   ]
 })

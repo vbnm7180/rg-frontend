@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { throwError } from 'rxjs';
-import { catchError, switchMap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -27,44 +27,43 @@ export class APIService {
   }
 
   public makeOrder(orderData) {
-    return this.http.post(`http://localhost:8000/api/create-order`,orderData);
+    return this.http.post(`http://localhost:8000/api/create-order`, orderData);
   }
 
   public getOrders() {
     return this.http.get(`http://localhost:8000/api/orders`);
   }
 
-  public registerUser(userData){
+  public registerUser(userData) {
     console.log(this.cookie.getAll());
     return this.http.post(`//localhost:8000/register`, userData).pipe(
-      catchError((error:HttpErrorResponse) => throwError(error))
-   );
+      catchError((error: HttpErrorResponse) => throwError(error))
+    );
   }
 
-  public loginUser(userData){
+  public loginUser(userData) {
     console.log(this.cookie.getAll());
     return this.http.post(`//localhost:8000/login`, userData).pipe(
-      catchError((error:HttpErrorResponse) => throwError(error))
-   );
+      catchError((error: HttpErrorResponse) => throwError(error))
+    );
   }
 
   public isAuthentificated() {
     return this.http.get(`//localhost:8000/api/is-auth`).pipe(
-      catchError((error:HttpErrorResponse) => throwError(error))
-   );    
+      catchError((error: HttpErrorResponse) => throwError(error))
+    );
   }
 
-  public logoutUser(){
+  public logoutUser() {
     return this.http.get(`//localhost:8000/api/logout`).pipe(
-      catchError((error:HttpErrorResponse) => throwError(error))
-   );        
+      catchError((error: HttpErrorResponse) => throwError(error))
+    );
   }
 
   public updateUser(data) {
     console.log(data)
     return this.http.put(`//localhost:8000/api/update-user`, data).pipe(
-      catchError((error:HttpErrorResponse) => throwError(error))
-   );
+      catchError((error: HttpErrorResponse) => throwError(error))
+    );
   }
-
 }

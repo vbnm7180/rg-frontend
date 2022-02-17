@@ -5,8 +5,6 @@ import { InputTextModule } from 'primeng/inputtext';
 
 import { DeliveryPageComponent } from 'src/app/view/components/delivery-page/delivery-page.component';
 
-
-
 @NgModule({
   declarations: [
     DeliveryPageComponent
@@ -16,7 +14,7 @@ import { DeliveryPageComponent } from 'src/app/view/components/delivery-page/del
     SharedModule,
     InputTextModule
   ],
-  exports:[
+  exports: [
     DeliveryPageComponent
   ]
 })

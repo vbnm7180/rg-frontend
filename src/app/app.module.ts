@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HeaderModule } from './modules/header/header.module';
 import { FooterModule } from './modules/footer/footer.module';
-import { MainPageModule} from './modules/main-page/main-page.module';
+import { MainPageModule } from './modules/main-page/main-page.module';
 import { ProductsPageModule } from './modules/products-page/products-page.module';
-import { ProductsDetailPageModule }  from './modules/products-detail-page/products-detail-page.module';
+import { ProductsDetailPageModule } from './modules/products-detail-page/products-detail-page.module';
 import { CartProductsPageModule } from './modules/cart-products-page/cart-products-page.module';
 import { CartFormPageModule } from './modules/cart-form-page/cart-form-page.module';
 import { LoginPageModule } from './modules/login-page/login-page.module';
@@ -26,7 +26,6 @@ import { SpinnerModule } from './modules/spinner/spinner.module';
 import { SpinnerService } from './services/spinner-service/spinner.service';
 import { PopupModule } from './modules/popup/popup.module';
 import { PopupService } from './services/popup-service/popup.service';
-//import { PasswordConformationValidatorDirective } from './password-conformation-validator.directive';
 
 @NgModule({
   declarations: [

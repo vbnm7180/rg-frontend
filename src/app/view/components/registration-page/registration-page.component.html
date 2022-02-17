@@ -35,10 +35,6 @@
                 <div class="error-text">{{ (password_confirmation.errors?.required && validationVisible) ? 'Поле не заполнено' : (registerForm.errors?.passwordConfirmation && validationVisible) ? 'Пароли не совпадают' : ''}}</div>
             </div>
 
-            <!-- <div class="registration__policy">
-                <input type="checkbox" checked>
-                <div class="policy__text">Согласие на обработку персональных данных</div>
-            </div> -->
         </form>
         <button class="registration-btn" (click)="registerUser()">Зарегистрироваться</button>
         <a [routerLink]="['/login']" class="login-link">Уже зарегистрированы? Войти.</a>
