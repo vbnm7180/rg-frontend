@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { PopupService } from 'src/app/services/popup-service/popup.service';
 
 @Component({
@@ -27,13 +28,10 @@ export class PopupComponent implements OnInit {
   }
 
   public getPopupHeader() {
-    console.log(this.popupService.getPopupHeader())
     return this.popupService.getPopupHeader();
-
   }
 
   public getPopupContent() {
     return this.popupService.getPopupContent();
-
   }
 }

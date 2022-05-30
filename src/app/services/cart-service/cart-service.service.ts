@@ -33,8 +33,6 @@ export class CartService {
 
   deleteProductFromCart(product: Product) {
     this.products = this.products.filter((item) => {
-      console.log(JSON.stringify(item))
-      console.log(JSON.stringify(product))
       return JSON.stringify(item) !== JSON.stringify(product)
     });
     this.syncProducts();

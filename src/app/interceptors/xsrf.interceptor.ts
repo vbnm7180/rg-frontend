@@ -3,15 +3,13 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor,
-  HttpXsrfTokenExtractor
+  HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
 
   export class XsrfInterceptor implements HttpInterceptor {
-
     constructor() {
     }
 

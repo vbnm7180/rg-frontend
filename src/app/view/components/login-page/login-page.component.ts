@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
@@ -35,9 +36,8 @@ export class LoginPageComponent implements OnInit {
     this.validationVisible = true;
     if (this.loginForm.valid) {
       this.spinnerService.showSpinner();
-      console.log(this.loginForm.value)
       this.apiService.loginUser(this.loginForm.value).subscribe(
-        (response) => {
+        () => {
           this.spinnerService.hideSpinner();
           this.router.navigateByUrl('/account');
         },

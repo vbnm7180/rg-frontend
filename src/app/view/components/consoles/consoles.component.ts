@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./consoles.component.scss']
 })
 export class ConsolesComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

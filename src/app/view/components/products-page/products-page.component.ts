@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from 'src/app/models/products';
+import { ActivatedRoute } from '@angular/router';
+
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { CartService } from 'src/app/services/cart-service/cart-service.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
+import { Product } from 'src/app/models/products';
 
 @Component({
 	selector: 'rg-products-page',
@@ -20,7 +21,6 @@ export class ProductsPageComponent implements OnInit {
 	public sortOptions = [];
 
 	constructor(
-		private router: Router,
 		private activatedRoute: ActivatedRoute,
 		private apiService: APIService,
 		private cartService: CartService,
@@ -43,8 +43,7 @@ export class ProductsPageComponent implements OnInit {
 		];
 	}
 
-	onSortChange(event) {
-
+	public onSortChange(event) {
 		switch (event.value) {
 			case 'lowest price':
 				this.sortOrder = 1;
@@ -61,16 +60,16 @@ export class ProductsPageComponent implements OnInit {
 		}
 	}
 
-	addToCart(event: MouseEvent, product: Product) {
+	public addToCart(event: MouseEvent, product: Product) {
 		event.stopPropagation();
 		this.cartService.addProductToCart(product);
 	}
 
-	isInCart(product: Product) {
+	public isInCart(product: Product) {
 		return this.cartService.isProductInCart(product);
 	}
 
-	goToCart(event: MouseEvent) {
+	public goToCart(event: MouseEvent) {
 		event.stopPropagation();
 	}
 }

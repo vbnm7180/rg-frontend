@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Order } from 'src/app/models/orders';
+
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { PopupService } from 'src/app/services/popup-service/popup.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
+
+import { Order } from 'src/app/models/orders';
 
 @Component({
 	selector: 'rg-account-page',
@@ -26,7 +28,6 @@ export class AccountPageComponent implements OnInit {
 	) { }
 
 	ngOnInit(): void {
-
 		this.userForm = this.formBuilder.group({
 			name: [''],
 			phone: [''],
@@ -57,7 +58,7 @@ export class AccountPageComponent implements OnInit {
 
 	public logoutUser() {
 		this.apiService.logoutUser().subscribe(
-			(response) => {
+			() => {
 				this.spinnerService.hideSpinner();
 				this.router.navigateByUrl('/');
 			},

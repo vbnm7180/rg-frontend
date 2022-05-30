@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { PopupService } from 'src/app/services/popup-service/popup.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
@@ -11,7 +12,6 @@ import { passwordConfirmation } from '../../directives/password-confirmation-val
   styleUrls: ['./registration-page.component.scss']
 })
 export class RegistrationPageComponent implements OnInit {
-
   public registerForm: FormGroup;
   public validationVisible: boolean = false;
   public popupHeader = 'Вы успешно зарегистрированы';
@@ -46,7 +46,7 @@ export class RegistrationPageComponent implements OnInit {
     if (this.registerForm.valid) {
       this.spinnerService.showSpinner();
       this.apiService.registerUser(this.registerForm.value).subscribe(
-        (response) => {
+        () => {
           this.spinnerService.hideSpinner();
           this.popupService.showPopup(this.popupHeader, this.popupContent, '/');
         },

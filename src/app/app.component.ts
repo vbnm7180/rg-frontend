@@ -16,7 +16,6 @@ export class AppComponent {
     private spinnerService: SpinnerService,
     private popupService: PopupService
   ) {
-
   }
 
   ngOnInit() {

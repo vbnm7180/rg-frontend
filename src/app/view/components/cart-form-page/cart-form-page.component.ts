@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Product } from 'src/app/models/products';
+
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { CartService } from 'src/app/services/cart-service/cart-service.service';
 import { PopupService } from 'src/app/services/popup-service/popup.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
+
+import { Product } from 'src/app/models/products';
 
 @Component({
   selector: 'rg-cart-form-page',
@@ -59,7 +61,7 @@ export class CartFormPageComponent implements OnInit {
     });
   }
 
-  makeOrder() {
+  public makeOrder() {
     this.validationVisible = true;
 
     if (this.cartForm.valid) {
@@ -78,11 +80,11 @@ export class CartFormPageComponent implements OnInit {
     }
   }
 
-  getCartProducts() {
+  public getCartProducts() {
     this.products = this.cartService.getCartProducts();
   }
 
-  getCartPrice() {
+  public getCartPrice() {
     return this.cartService.getCartPrice();
   }
 }

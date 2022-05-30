@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/products';
-import { ActivatedRoute, Router } from '@angular/router';
+
+import { ActivatedRoute } from '@angular/router';
+
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { CartService } from 'src/app/services/cart-service/cart-service.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
+
+import { Product } from 'src/app/models/products';
 
 @Component({
   selector: 'rg-products-detail-page',
@@ -15,7 +18,6 @@ export class ProductsDetailPageComponent implements OnInit {
   public product: Product = new Product({});
 
   constructor(
-    private router: Router,
     private activatedRoute: ActivatedRoute,
     private apiService: APIService,
     private cartService: CartService,
@@ -33,15 +35,11 @@ export class ProductsDetailPageComponent implements OnInit {
     });
   }
 
-  addToCart(event: MouseEvent, product: Product) {
-    console.log(product)
+  public addToCart() {
     this.cartService.addProductToCart(this.product);
   }
 
-  isInCart(product: Product) {
+  public isInCart() {
     return this.cartService.isProductInCart(this.product);
-  }
-
-  goToCart(event: MouseEvent) {
   }
 }

@@ -35,7 +35,6 @@ export class APIService {
   }
 
   public registerUser(userData) {
-    console.log(this.cookie.getAll());
     return this.http.post(`//localhost:8000/register`, userData).pipe(
       catchError((error: HttpErrorResponse) => throwError(error))
     );
@@ -61,7 +60,6 @@ export class APIService {
   }
 
   public updateUser(data) {
-    console.log(data)
     return this.http.put(`//localhost:8000/api/update-user`, data).pipe(
       catchError((error: HttpErrorResponse) => throwError(error))
     );

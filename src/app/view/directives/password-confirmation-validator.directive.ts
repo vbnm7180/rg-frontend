@@ -5,9 +5,7 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
   selector: '[rgPasswordConfirmationValidator]'
 })
 export class PasswordConfirmationValidatorDirective {
-
   constructor() { }
-
 }
 
 export const passwordConfirmation: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {

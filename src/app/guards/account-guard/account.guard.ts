@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { observable, Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 

@@ -19,15 +19,15 @@ export class CartProductsPageComponent implements OnInit {
     this.getCartProducts();
   }
 
-  getCartProducts() {
+  public getCartProducts() {
     this.products = this.cartService.getCartProducts();
   }
 
-  getCartPrice() {
+  public getCartPrice() {
     return this.cartService.getCartPrice();
   }
 
-  deleteFromCart(product) {
+  public deleteFromCart(product) {
     this.cartService.deleteProductFromCart(product);
     this.getCartProducts();
   }
