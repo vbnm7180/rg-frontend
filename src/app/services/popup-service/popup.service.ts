@@ -35,6 +35,11 @@ export class PopupService {
   }
 
   public hidePopup() {
-    this.popup = new Popup();
+    Object.assign(this.popup, {
+      popupHeader: '',
+      popupContent: '',
+      redirectUrl: '',
+      isPopupShown: false
+    });
   }
 }
