@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { REGISTER_POPUP } from 'src/app/models/constants';
+import { Popup } from 'src/app/models/popup';
 
 import { APIService } from 'src/app/services/api-service/api-service.service';
 import { PopupService } from 'src/app/services/popup-service/popup.service';
@@ -14,8 +16,6 @@ import { passwordConfirmation } from '../../directives/password-confirmation-val
 export class RegistrationPageComponent implements OnInit {
   public registerForm: FormGroup;
   public validationVisible: boolean = false;
-  public popupHeader = 'Вы успешно зарегистрированы';
-  public popupContent = 'Закройте это окно, чтобы перейти на главную страницу.';
 
   get name() { return this.registerForm.get('name'); }
   get email() { return this.registerForm.get('email'); }
@@ -48,7 +48,7 @@ export class RegistrationPageComponent implements OnInit {
       this.apiService.registerUser(this.registerForm.value).subscribe(
         () => {
           this.spinnerService.hideSpinner();
-          this.popupService.showPopup(this.popupHeader, this.popupContent, '/');
+          this.popupService.showPopup(REGISTER_POPUP);
         },
         (error) => {
           this.spinnerService.hideSpinner();

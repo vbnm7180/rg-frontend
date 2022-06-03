@@ -27,13 +27,11 @@ export class PopupService {
     return this.popup.redirectUrl;
   }
 
-  public showPopup(popupHeader: string, popupContent: string, url?: string) {
-    this.popup = {
-      popupHeader: popupHeader,
-      popupContent: popupContent,
-      redirectUrl: url,
+  public showPopup(popup: Popup) {
+    Object.assign(this.popup, {
+      ...popup,
       isPopupShown: true
-    };
+    });
   }
 
   public hidePopup() {

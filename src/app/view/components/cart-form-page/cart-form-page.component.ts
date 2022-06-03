@@ -7,6 +7,8 @@ import { PopupService } from 'src/app/services/popup-service/popup.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
 import { Product } from 'src/app/models/products';
+import { Popup } from 'src/app/models/popup';
+import { ORDER_POPUP } from 'src/app/models/constants';
 
 @Component({
   selector: 'rg-cart-form-page',
@@ -18,8 +20,6 @@ export class CartFormPageComponent implements OnInit {
   public products: Product[] = [];
   public cartForm: FormGroup;
   public validationVisible = false;
-  public popupHeader = 'ЗАКАЗ ОФОРМЛЕН';
-  public popupContent = 'Письмо с подтверждением заказа отправлено на ваш Email. Ожидайте звонка оператора.';
 
   get name() { return this.cartForm.get('name'); }
   get email() { return this.cartForm.get('email'); }
@@ -74,7 +74,7 @@ export class CartFormPageComponent implements OnInit {
 
       this.apiService.makeOrder(this.cartForm.value).subscribe(() => {
         this.spinnerService.hideSpinner();
-        this.popupService.showPopup(this.popupHeader, this.popupContent, '/');
+        this.popupService.showPopup(ORDER_POPUP);
         this.cartService.emptyCart();
       });
     }

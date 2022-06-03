@@ -1,3 +1,5 @@
+import { Popup } from "./popup";
+
 export const NAV_MENU = [{
 	label: 'Приставки',
 	items: [{
@@ -39,3 +41,20 @@ export const SLIDER_CONFIG = {
 	appendDots: '.slide-dots',
 	dotsClass: 'dot-item'
 };
+
+export const REGISTER_POPUP: Popup = {
+	popupHeader: 'Вы успешно зарегистрированы',
+	popupContent: 'Закройте это окно, чтобы перейти на главную страницу.',
+	redirectUrl: '/'
+}
+
+export const ORDER_POPUP: Popup = {
+	popupHeader: 'ЗАКАЗ ОФОРМЛЕН',
+	popupContent: 'Письмо с подтверждением заказа отправлено на ваш Email. Ожидайте звонка оператора.',
+	redirectUrl: '/'
+}
+
+export const ACCOUNT_UPDATE_POPUP: Popup = {
+	popupHeader: 'Ваши данные успешно обновлены',
+	popupContent: ''
+}

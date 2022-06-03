@@ -7,6 +7,7 @@ import { PopupService } from 'src/app/services/popup-service/popup.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
 import { Order } from 'src/app/models/orders';
+import { ACCOUNT_UPDATE_POPUP } from 'src/app/models/constants';
 
 @Component({
 	selector: 'rg-account-page',
@@ -17,7 +18,6 @@ export class AccountPageComponent implements OnInit {
 
 	public userForm: FormGroup;
 	public orders: Order[];
-	public popupHeader = 'Ваши данные успешно обновлены';
 
 	constructor(
 		private apiService: APIService,
@@ -52,7 +52,7 @@ export class AccountPageComponent implements OnInit {
 		this.spinnerService.showSpinner();
 		this.apiService.updateUser(this.userForm.value).subscribe(() => {
 			this.spinnerService.hideSpinner();
-			this.popupService.showPopup(this.popupHeader, '');
+			this.popupService.showPopup(ACCOUNT_UPDATE_POPUP);
 		});
 	}
 
