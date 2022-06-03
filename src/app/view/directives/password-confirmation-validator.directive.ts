@@ -11,8 +11,5 @@ export class PasswordConfirmationValidatorDirective {
 export const passwordConfirmation: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
   const password = control.get('password');
   const password_confirmation = control.get('password_confirmation');
-
-  console.log(password.value !== password_confirmation.value)
-
   return password.value !== password_confirmation.value ? { passwordConfirmation: true } : null;
 };

@@ -33,7 +33,6 @@ export class AccountGuard implements CanActivate {
         else {
           this.spinnerService.hideSpinner();
           this.router.navigateByUrl('/login');
-
         }
       })
     );
