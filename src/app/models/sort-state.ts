@@ -3,7 +3,7 @@ export class SortState {
 	public sortOrder: string;
 
 	constructor(data?: any) {
-		this.sortField = data.sortField || 'name';
-		this.sortOrder = data.sortOrder || 1;
+		this.sortField = data?.sortField || 'name';
+		this.sortOrder = data?.sortOrder || 1;
 	}
 }

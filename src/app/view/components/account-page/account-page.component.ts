@@ -42,7 +42,9 @@ export class AccountPageComponent implements OnInit {
 
 		this.apiService.getOrders().subscribe((response: any) => {
 			this.orders = response.data.map((order) => {
-				order.products = JSON.parse(order.products);
+				if (order.products) {
+				  order.products = JSON.parse(order.products);
+				}
 			});
 			this.orders = response.data;
 		});

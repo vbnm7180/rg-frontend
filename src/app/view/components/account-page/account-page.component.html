@@ -42,6 +42,7 @@
                         <div class="item__name">{{i+1}}. {{product.name}} </div>
                         <div class="item__price">{{product.price}} ₽</div>
                     </div>
+                    <div *ngIf="!order.products" class="order-error">Ошибка в заказе. Обратитесь к оператору.</div>
                     <div class="order__footer">
                         <div class="total-name">Общая стоимость:</div>
                         <div class="total-price">{{order.price}}</div>

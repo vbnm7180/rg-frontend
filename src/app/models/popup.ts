@@ -5,9 +5,9 @@ export class Popup {
 	public isPopupShown?: boolean;	
 
 	constructor(data?: any) {
-		this.isPopupShown = data.isPopupShown || false;
-		this.popupHeader = data.popupHeader || '';
-		this.popupContent = data.popupContent || '';
-		this.redirectUrl = data.redirectUrl || '';
+		this.isPopupShown = data?.isPopupShown || false;
+		this.popupHeader = data?.popupHeader || '';
+		this.popupContent = data?.popupContent || '';
+		this.redirectUrl = data?.redirectUrl || '';
 	}
 }

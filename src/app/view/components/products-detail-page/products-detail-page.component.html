@@ -11,8 +11,8 @@
             </div>
             <div class="product__price-wrapper">
                 <div class="product__price">{{product.price}} ₽</div>
-                <button class="add-to-cart__btn" (click)="addToCart($event)" *ngIf="!isInCart(product)">Добавить в корзину</button>
-                <button class="move-to-cart__btn" [routerLink]="['/cart']" (click)="goToCart($event)" *ngIf="isInCart(product)">Перейти в корзину</button>
+                <button class="add-to-cart__btn" (click)="addToCart()" *ngIf="!isInCart()">Добавить в корзину</button>
+                <button class="move-to-cart__btn" [routerLink]="['/cart']" *ngIf="isInCart()">Перейти в корзину</button>
             </div>
         </div>
         <div class="product__description">
