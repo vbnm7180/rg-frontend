@@ -42,6 +42,12 @@ export const SLIDER_CONFIG = {
 	dotsClass: 'dot-item'
 };
 
+export const SORT_OPTIONS = [
+	{ label: 'Цена по возрастанию', value: 'lowest price' },
+	{ label: 'Цена по убыванию', value: 'highest price' },
+	{ label: 'По алфавиту', value: 'alphabet' }
+];
+
 export const REGISTER_POPUP: Popup = {
 	popupHeader: 'Вы успешно зарегистрированы',
 	popupContent: 'Закройте это окно, чтобы перейти на главную страницу.',

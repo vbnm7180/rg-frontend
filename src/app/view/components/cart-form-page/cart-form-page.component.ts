@@ -7,7 +7,6 @@ import { PopupService } from 'src/app/services/popup-service/popup.service';
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
 import { Product } from 'src/app/models/products';
-import { Popup } from 'src/app/models/popup';
 import { ORDER_POPUP } from 'src/app/models/constants';
 
 @Component({

@@ -34,7 +34,7 @@ export class CartService {
 
   deleteProductFromCart(product: Product) {
     this.products = this.products.filter((item) => {
-      return JSON.stringify(item) !== JSON.stringify(product)
+      return JSON.stringify(item) !== JSON.stringify(product);
     });
     this.syncProducts();
   }
@@ -46,7 +46,7 @@ export class CartService {
 
   isProductInCart(product: Product) {
     return this.products.some((item) => {
-      return JSON.stringify(item) === JSON.stringify(product)
+      return JSON.stringify(item) === JSON.stringify(product);
     });
   }
 

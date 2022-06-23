@@ -7,7 +7,7 @@ export class Product {
 	public description: string;
 	public attributes: any;
 
-	constructor(data) {
+	constructor(data: any) {
 		this.id = data.id || '';
 		this.name = data.name || '';
 		this.price = data.price || 0;

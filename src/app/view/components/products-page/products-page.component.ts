@@ -6,6 +6,8 @@ import { CartService } from 'src/app/services/cart-service/cart-service.service'
 import { SpinnerService } from 'src/app/services/spinner-service/spinner.service';
 
 import { Product } from 'src/app/models/products';
+import { SORT_OPTIONS } from 'src/app/models/constants';
+import { SortState } from 'src/app/models/sort-state';
 
 @Component({
 	selector: 'rg-products-page',
@@ -14,11 +16,11 @@ import { Product } from 'src/app/models/products';
 })
 export class ProductsPageComponent implements OnInit {
 
-	public sortKey: string;
-	public sortField: string;
-	public sortOrder: number;
 	public products: Product[] = [];
-	public sortOptions = [];
+	public sortKey: string;
+	public sortOptions = SORT_OPTIONS;
+	public sortState = new SortState();
+
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
@@ -35,27 +37,27 @@ export class ProductsPageComponent implements OnInit {
 				this.spinnerService.hideSpinner();
 			});
 		});
-
-		this.sortOptions = [
-			{ label: 'Цена по возрастанию', value: 'lowest price' },
-			{ label: 'Цена по убыванию', value: 'highest price' },
-			{ label: 'По алфавиту', value: 'alphabet' }
-		];
 	}
 
 	public onSortChange(event) {
 		switch (event.value) {
 			case 'lowest price':
-				this.sortOrder = 1;
-				this.sortField = 'price';
+				Object.assign(this.sortState, {
+					sortField: 'price',
+					sortOrder: 1
+				});
 				break;
 			case 'highest price':
-				this.sortOrder = -1;
-				this.sortField = 'price';
+				Object.assign(this.sortState, {
+					sortField: 'price',
+					sortOrder: -1
+				});
 				break;
 			case 'alphabet':
-				this.sortOrder = 1;
-				this.sortField = 'name';
+				Object.assign(this.sortState, {
+					sortField: 'name',
+					sortOrder: 1
+				});
 				break;
 		}
 	}

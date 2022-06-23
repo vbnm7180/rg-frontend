@@ -1,5 +1,5 @@
 <div class="products-page">
-    <p-dataView #dv [value]="products" [paginator]="true" [rows]="16" [sortField]="sortField" [sortOrder]="sortOrder" filterBy="name" layout="grid" [totalRecords]="100">
+    <p-dataView #dv [value]="products" [paginator]="true" [rows]="16" [sortField]="sortState.sortField" [sortOrder]="sortState.sortOrder" filterBy="name" layout="grid" [totalRecords]="100">
         <ng-template pTemplate="header">
             <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Сортировать" (onChange)="onSortChange($event)"></p-dropdown>
             <input class="products__filter" type="search" placeholder="Поиск по товарам" (input)="dv.filter($event.target.value)">

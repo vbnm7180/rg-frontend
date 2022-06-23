@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 
-  export class XsrfInterceptor implements HttpInterceptor {
-    constructor() {
-    }
+export class XsrfInterceptor implements HttpInterceptor {
+  constructor() {
+  }
 
-    intercept(reqest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        reqest = reqest.clone({ withCredentials: true });
-        return next.handle(reqest);
-    }
+  intercept(reqest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    reqest = reqest.clone({ withCredentials: true });
+    return next.handle(reqest);
+  }
 }

@@ -14,7 +14,7 @@ export class Order {
 	public products: Product[];
 	public status: string;
 
-	constructor(data) {
+	constructor(data: any) {
 		this.id = data.id || '';
 		this.name = data.name || '';
 		this.email = data.email || '';
